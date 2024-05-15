@@ -4,13 +4,21 @@
  * and open the template in the editor.
  */
 package libraryManagementSystem;
+import CONFIG.Session;
+import manage.borrowbook;
+import manage.VIOLATION;
+import manage.vewrecs;
+import manage.returnbook;
+import manage.addstudent;
+import manage.vewisbook;
+import manage.addbook;
 import java.awt.Color;
-import internalpage.*;
-import internalpage.dashabord;
+import manage.dashabord;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Image;
 import java.awt.Graphics;
+
 /**
  *
  * @author User
@@ -59,7 +67,8 @@ public class DASHBOARD extends javax.swing.JFrame {
         exit = new javax.swing.JLabel();
         minimize = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        ImageIcon icon = new ImageIcon(getClass().getResource("stephaaaa.jpg"));
+        acc_name = new javax.swing.JLabel();
+        ImageIcon icon = new ImageIcon(getClass().getResource("signup-library-icon.png"));
         Image img=icon.getImage();
         maindesk = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics g){
@@ -71,12 +80,17 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DH.setBackground(new java.awt.Color(255, 0, 0));
+        DH.setBackground(new java.awt.Color(153, 153, 255));
         DH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DHMouseClicked(evt);
@@ -96,7 +110,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel3.setText("DASHBOARD");
         DH.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, -1));
 
-        jPanel1.add(DH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 40));
+        jPanel1.add(DH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 190, 40));
 
         AB.setBackground(new java.awt.Color(51, 51, 51));
         AB.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -118,7 +132,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel4.setText("Add/View Book");
         AB.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 120, -1));
 
-        jPanel1.add(AB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 190, -1));
+        jPanel1.add(AB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, -1));
 
         AS.setBackground(new java.awt.Color(51, 51, 51));
         AS.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -140,7 +154,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel5.setText("Add/View Student");
         AS.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, -1));
 
-        jPanel1.add(AS, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 190, 40));
+        jPanel1.add(AS, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 190, 40));
 
         IB.setBackground(new java.awt.Color(51, 51, 51));
         IB.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -162,7 +176,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel6.setText("Borrow Book");
         IB.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 129, -1));
 
-        jPanel1.add(IB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 190, 40));
+        jPanel1.add(IB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 190, 40));
 
         RB.setBackground(new java.awt.Color(51, 51, 51));
         RB.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -184,7 +198,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel7.setText("Return book");
         RB.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 129, -1));
 
-        jPanel1.add(RB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 190, -1));
+        jPanel1.add(RB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 190, -1));
 
         VR.setBackground(new java.awt.Color(51, 51, 51));
         VR.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -206,7 +220,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel8.setText("View Record");
         VR.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 11, 129, -1));
 
-        jPanel1.add(VR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 190, -1));
+        jPanel1.add(VR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 190, -1));
 
         VIB.setBackground(new java.awt.Color(51, 51, 51));
         VIB.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -228,7 +242,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel9.setText("Issued Book");
         VIB.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 158, -1));
 
-        jPanel1.add(VIB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 190, -1));
+        jPanel1.add(VIB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 190, -1));
 
         VL.setBackground(new java.awt.Color(51, 51, 51));
         VL.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -250,7 +264,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel10.setText("Violator list");
         VL.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 158, -1));
 
-        jPanel1.add(VL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 190, -1));
+        jPanel1.add(VL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 190, -1));
 
         LO.setBackground(new java.awt.Color(102, 102, 225));
         LO.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -272,21 +286,21 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel11.setText("Logout");
         LO.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 158, -1));
 
-        jPanel1.add(LO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 190, -1));
+        jPanel1.add(LO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 190, -1));
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("MANAGE");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 190, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 190, 30));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("FEATURED");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 190, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 190, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -7, 190, 600));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 53, 190, 540));
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -317,30 +331,40 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("LIBRARY MANAGEMENT SYSTEM");
 
+        acc_name.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 24)); // NOI18N
+        acc_name.setForeground(new java.awt.Color(255, 255, 255));
+        acc_name.setText("ADMIN");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(acc_name, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 285, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(179, 179, 179)
                 .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(acc_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel12)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 10, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel12)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 0, 870, 50));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-7, 0, 1070, 50));
 
         maindesk.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -348,14 +372,14 @@ public class DASHBOARD extends javax.swing.JFrame {
         maindesk.setLayout(maindeskLayout);
         maindeskLayout.setHorizontalGroup(
             maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 870, Short.MAX_VALUE)
         );
         maindeskLayout.setVerticalGroup(
             maindeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 540, Short.MAX_VALUE)
         );
 
-        getContentPane().add(maindesk, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 865, 540));
+        getContentPane().add(maindesk, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 870, 540));
 
         pack();
         setLocationRelativeTo(null);
@@ -366,7 +390,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_DHMouseEntered
 
     private void DHMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DHMouseExited
-       this.DH.setBackground(Color.decode("#333333"));
+       this.DH.setBackground(Color.decode("#9999FF"));
     }//GEN-LAST:event_DHMouseExited
 
     private void ABMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABMouseEntered
@@ -430,7 +454,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_LOMouseEntered
 
     private void LOMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOMouseExited
-       this.LO.setBackground(Color.decode("#333333"));
+       this.LO.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_LOMouseExited
 
     private void DHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DHMouseClicked
@@ -453,7 +477,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
     private void IBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IBMouseClicked
         maindesk.removeAll();
-        issuebook as =new issuebook();
+        borrowbook as =new borrowbook();
         maindesk.add(as).setVisible(true);
     }//GEN-LAST:event_IBMouseClicked
 
@@ -505,6 +529,13 @@ public class DASHBOARD extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMouseClicked
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        Session sess = Session.getInstance();
+        acc_name.setText(""+sess.getUN());
+       
+    }//GEN-LAST:event_formWindowActivated
+
     /**
      * @param args the command line arguments
      */
@@ -550,6 +581,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     private javax.swing.JPanel VIB;
     private javax.swing.JPanel VL;
     private javax.swing.JPanel VR;
+    private javax.swing.JLabel acc_name;
     private javax.swing.JLabel exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

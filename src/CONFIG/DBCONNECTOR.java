@@ -17,7 +17,7 @@ public class DBCONNECTOR {
     
     public DBCONNECTOR (){
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
             }catch(SQLException e){
                 System.err.println("Cannot connect to database: " + e.getMessage());
             }
@@ -31,17 +31,22 @@ public class DBCONNECTOR {
         return resultSet;
     }
 
- public void insertData(String sql){
+ public boolean insertData(String sql){
+            
             try{
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-           
-            pstmt.executeUpdate();
-            System.out.println("Inserted Successfully!");
-            pstmt.close();
-            }catch(SQLException e){
-                System.out.println("Connection Error: "+e);
+                PreparedStatement pst = connection.prepareStatement(sql);
+                pst.executeUpdate();
+                System.out.println("Inserted Successfully!");
+                pst.close();
+              return true;
+               
+            }catch(SQLException ex){
+                System.out.println("Connection Error: "+ex);
+                return false;
+               
             }
-    }
+        
+}
     
     
       public void deleteData(int id) {

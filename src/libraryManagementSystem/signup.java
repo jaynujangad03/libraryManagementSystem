@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import CONFIG.DBCONNECTOR;
+import CONFIG.passwordHash;
+import java.security.NoSuchAlgorithmException;
 import org.mindrot.jbcrypt.BCrypt;
 import java.sql.*;
 import java.sql.DriverManager;
@@ -19,40 +21,20 @@ public class signup extends javax.swing.JFrame {
     public signup() {
         initComponents();
     }
-public void signup(){
+    
+ 
 
-String name= UN.getText();
-String email= EMAIL.getText();
-String contact= CONTACT.getText();
-String pwd= PD.getText();
-String hasedpassword = BCrypt.hashpw(pwd, BCrypt.gensalt());
+    public static boolean loginAcc(String username, String password){
+      
+        DBCONNECTOR connector = new DBCONNECTOR();
+        try{
+            String query = "SELECT * FROM user  WHERE username = '" + username + "' AND password = '" + password + "'";
+            ResultSet resultSet = connector.getData(query);
+            return resultSet.next();
+        }catch (SQLException ex) {
+            return false;
+        }
 
-
-    try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
-            String sql = "insert into user(username,email,contact,password)values (?,?,?,?)";
-            PreparedStatement pst = con.prepareStatement(sql);
-        
-        pst.setString(1, name);
-        pst.setString(2, email);
-        pst.setString(3, contact);
-        pst.setString(4,hasedpassword );
-        
-       int uprcount = pst.executeUpdate();
-       if(uprcount >0){
-       JOptionPane.showMessageDialog(this, "SIGN UP SUCCESSFULLY");
-      login in= new login();
-        in.setVisible(true);
-        this. dispose();
-        
-       }else{
-       JOptionPane.showMessageDialog(this, "SIGH UP FAILED");
-             
-       }
-       
-    } catch (Exception e) {
-    e.printStackTrace();
-    }
     }
 
 
@@ -81,11 +63,13 @@ if(contact.equals("")){
      
    return true;  
  }
+ 
+ 
  public boolean duplicateuser(){
  String name = UN.getText();
    boolean isexist = false;
  try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
            PreparedStatement pst = con.prepareStatement("select * from user where username = ?");
            pst.setString(1, name);
            ResultSet rs = pst.executeQuery();
@@ -101,6 +85,8 @@ if(contact.equals("")){
      }
  return isexist;
  }
+ 
+ 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -126,7 +112,6 @@ if(contact.equals("")){
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         SIGN_UP = new necesario.RSMaterialButtonCircle();
-        LOG_IN = new necesario.RSMaterialButtonCircle();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -191,7 +176,6 @@ if(contact.equals("")){
         jLabel6.setText("PASSWORD:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 90, 30));
 
-        PD.setBackground(new java.awt.Color(246, 55, 55));
         PD.setBorder(null);
         PD.setForeground(new java.awt.Color(0, 0, 0));
         PD.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
@@ -227,7 +211,6 @@ if(contact.equals("")){
         jLabel13.setText("_______________________________");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 200, 30));
 
-        UN.setBackground(new java.awt.Color(246, 55, 55));
         UN.setBorder(null);
         UN.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         UN.setOpaque(false);
@@ -239,14 +222,12 @@ if(contact.equals("")){
         });
         jPanel2.add(UN, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, -1, -1));
 
-        EMAIL.setBackground(new java.awt.Color(246, 55, 55));
         EMAIL.setBorder(null);
         EMAIL.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         EMAIL.setOpaque(false);
         EMAIL.setPlaceholder("ENTER EMAIL");
         jPanel2.add(EMAIL, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
-        CONTACT.setBackground(new java.awt.Color(246, 55, 55));
         CONTACT.setBorder(null);
         CONTACT.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         CONTACT.setOpaque(false);
@@ -270,23 +251,14 @@ if(contact.equals("")){
         jLabel16.setText("_______________________________");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 200, 30));
 
-        SIGN_UP.setBackground(new java.awt.Color(0, 204, 0));
+        SIGN_UP.setBackground(new java.awt.Color(0, 164, 28));
         SIGN_UP.setText("SIGN UP");
         SIGN_UP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SIGN_UPActionPerformed(evt);
             }
         });
-        jPanel2.add(SIGN_UP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 160, 50));
-
-        LOG_IN.setBackground(new java.awt.Color(0, 204, 0));
-        LOG_IN.setText("LOGIN");
-        LOG_IN.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LOG_INMouseClicked(evt);
-            }
-        });
-        jPanel2.add(LOG_IN, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 160, 50));
+        jPanel2.add(SIGN_UP, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 160, 50));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 375, 495));
 
@@ -327,22 +299,29 @@ if(contact.equals("")){
     }//GEN-LAST:event_CONTACTActionPerformed
 
     private void SIGN_UPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGN_UPActionPerformed
-        if(validation()== true){
-      if(duplicateuser()== false){
-           signup();
-      }else{
-      JOptionPane.showMessageDialog(this, "USERNAME ALREADY EXIST");
-      }
-      }
-        
-      
-    }//GEN-LAST:event_SIGN_UPActionPerformed
 
-    private void LOG_INMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOG_INMouseClicked
-         login in= new login();
-        in.setVisible(true);
-        this. dispose();
-    }//GEN-LAST:event_LOG_INMouseClicked
+               DBCONNECTOR dbc = new DBCONNECTOR();
+               
+              try{
+               String pass = passwordHash.hashPassword(PD.getText());
+           if(dbc.insertData("INSERT INTO user (username, email, contact, password,status) VALUES ('" + UN.getText() + "', '" + EMAIL.getText() + "', '" + CONTACT.getText() + "', '" + pass+ "','Pending')")) {
+    
+
+                                       
+                JOptionPane.showMessageDialog(null, "created Successfully!");
+                setVisible(false);
+               
+                login loginForm = new login();
+                loginForm.setVisible(true);
+                this.dispose();
+         
+        }else{
+            JOptionPane.showMessageDialog(null, "Register failed");
+            }
+              }catch(NoSuchAlgorithmException ex){
+                  System.out.println(""+ex);
+              }  
+    }//GEN-LAST:event_SIGN_UPActionPerformed
 
     private void CONTACTKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CONTACTKeyPressed
            char c =evt.getKeyChar();
@@ -393,7 +372,6 @@ if(contact.equals("")){
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private app.bolivia.swing.JCTextField CONTACT;
     private app.bolivia.swing.JCTextField EMAIL;
-    private necesario.RSMaterialButtonCircle LOG_IN;
     private rojerusan.RSPasswordTextPlaceHolder PD;
     private necesario.RSMaterialButtonCircle SIGN_UP;
     private app.bolivia.swing.JCTextField UN;

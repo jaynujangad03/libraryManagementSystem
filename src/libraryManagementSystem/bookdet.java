@@ -6,7 +6,7 @@
 package libraryManagementSystem;
 
 import CONFIG.DBCONNECTOR;
-import internalpage.dashabord;
+import manage.dashabord;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.MessageFormat;
@@ -96,7 +96,7 @@ DefaultTableModel model;
         jPanel1.setBackground(new java.awt.Color(0, 204, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        rSMaterialButtonCircle3.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonCircle3.setBackground(new java.awt.Color(0, 153, 0));
         rSMaterialButtonCircle3.setText("PRINT");
         rSMaterialButtonCircle3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,19 +125,23 @@ DefaultTableModel model;
         jPanel1.add(FILTER, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 140, 30));
 
         jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/book (7).png"))); // NOI18N
         jLabel2.setText("BOOK DETAILS");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 930, 70));
 
         BOOKDET.setColorBackgoundHead(new java.awt.Color(153, 0, 0));
+        BOOKDET.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        BOOKDET.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
+        BOOKDET.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         BOOKDET.setGrosorBordeFilas(0);
         BOOKDET.setIntercellSpacing(new java.awt.Dimension(0, 0));
         jScrollPane1.setViewportView(BOOKDET);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 940, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 940, 400));
 
-        rSMaterialButtonCircle2.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 153, 0));
         rSMaterialButtonCircle2.setText("BACK");
         rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

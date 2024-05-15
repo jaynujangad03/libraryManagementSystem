@@ -8,16 +8,21 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import CONFIG.DBCONNECTOR;
+import CONFIG.Session;
+import CONFIG.passwordHash;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import org.mindrot.jbcrypt.BCrypt;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
+
 public class login extends javax.swing.JFrame {
 
 private Connection con;
     /**
      * Creates new form login
      */
+  static String status; 
     public login() {
         initComponents();
     }
@@ -35,39 +40,41 @@ private Connection con;
     }
     return true;
     }
-public void login(){
-    String name = UN.getText();
-    String pwd = PD.getText();
+   
+     
+      public static boolean loginAcc(String username, String password){
+        DBCONNECTOR connector = new DBCONNECTOR();
+        try{
+            String query = "SELECT * FROM user  WHERE username = '" + username + "'";
+            ResultSet resultSet = connector.getData(query);
 
-    try {
-          con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
-        PreparedStatement pst = con.prepareStatement("select * from user where username = '"+UN.getText()+"'");
-//           pst.setString(1, name);
-           ResultSet rs = pst.executeQuery();
-           
-          if(rs.next()){
-         String hashedpassword = rs.getString("password");
-            if(BCrypt.checkpw(pwd, hashedpassword)){
-                 JOptionPane.showMessageDialog(this, "LOGIN SUCCESSFULL"); 
-                 DASHBOARD dsh= new DASHBOARD();
-            dsh.setVisible(true);
-
-            this.setVisible(false);
-            this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
-            this.dispose();
-            
-            }  else{
-           JOptionPane.showMessageDialog(this, "INCORRECT USERNAME OR PASSWORD");
-            
+                if(resultSet.next()){ 
+                    String hashedPass = resultSet.getString("password");
+                    String rehashedPass = passwordHash.hashPassword(password);
+                    
+                   
+                    if(hashedPass.equals(rehashedPass)){
+                status= resultSet.getString("status");            
+                Session sess = Session.getInstance();
+                sess.setUid(resultSet.getInt("user_id"));
+                sess.setUN(resultSet.getString("username"));
+                sess.setEMAIL(resultSet.getString("email"));
+                sess.setCONTACT(resultSet.getString("contact"));
+                sess.setStatus(resultSet.getString("status"));
+                        System.out.println(""+sess.getUid());
+                return true;
+            }else{
+                return false;
             }
-          }   
-    } catch (Exception e) {
-    e.printStackTrace();
-    
+                   }else{
+                return false;
+            }
+        }catch (SQLException | NoSuchAlgorithmException ex) {
+            System.out.println(""+ex);
+            return false;
+        }
+
     }
-    
-    
-}
 
   
     @SuppressWarnings("unchecked")
@@ -84,13 +91,19 @@ public void login(){
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         LOGIN = new necesario.RSMaterialButtonCircle();
-        LOGIN1 = new necesario.RSMaterialButtonCircle();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         PD = new rojerusan.RSPasswordTextPlaceHolder();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 58, 140));
@@ -155,17 +168,7 @@ public void login(){
                 LOGINActionPerformed(evt);
             }
         });
-        jPanel2.add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 160, 50));
-
-        LOGIN1.setBackground(new java.awt.Color(255, 255, 255));
-        LOGIN1.setForeground(new java.awt.Color(0, 0, 0));
-        LOGIN1.setText("SIGN UP");
-        LOGIN1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LOGIN1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(LOGIN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 160, 50));
+        jPanel2.add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 140, 40));
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("_______________________________");
@@ -184,6 +187,17 @@ public void login(){
         PD.setPlaceholder("ENTER PASSWORD");
         jPanel2.add(PD, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
+        jLabel7.setText("Please click here to register");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 180, 2));
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 375, 495));
 
         pack();
@@ -199,16 +213,30 @@ public void login(){
     }//GEN-LAST:event_PDActionPerformed
 
     private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
-      if(validatelogin()== true){
-login();
-}
+              if(loginAcc(UN.getText(),PD.getText())){
+                  if(!status.equals("Active")){
+                      JOptionPane.showMessageDialog(null, "In-active account");
+                  }else{
+                      JOptionPane.showMessageDialog(null, "Login Success");
+                      DASHBOARD ds = new DASHBOARD();
+                      ds.setVisible(true);
+                      this.dispose();
+                  }
+                  }else{
+                         JOptionPane.showMessageDialog(null, "invalid username or password ");
+                          
+        }
     }//GEN-LAST:event_LOGINActionPerformed
 
-    private void LOGIN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGIN1ActionPerformed
-        signup UP= new signup();
-        UP.setVisible(true);
-        this. dispose();
-    }//GEN-LAST:event_LOGIN1ActionPerformed
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+            signup UP= new signup();
+                   UP.setVisible(true);
+                   this. dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -247,7 +275,6 @@ login();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private necesario.RSMaterialButtonCircle LOGIN;
-    private necesario.RSMaterialButtonCircle LOGIN1;
     private rojerusan.RSPasswordTextPlaceHolder PD;
     private app.bolivia.swing.JCTextField UN;
     private javax.swing.JLabel jLabel1;
@@ -258,7 +285,9 @@ login();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

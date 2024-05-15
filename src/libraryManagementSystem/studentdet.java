@@ -6,7 +6,7 @@
 package libraryManagementSystem;
 
 import CONFIG.DBCONNECTOR;
-import internalpage.dashabord;
+import manage.dashabord;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.*;
@@ -124,14 +124,14 @@ DefaultTableModel model;
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 190, 20));
 
-        rSMaterialButtonCircle2.setBackground(new java.awt.Color(153, 0, 0));
+        rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 153, 0));
         rSMaterialButtonCircle2.setText("PRINT");
         rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rSMaterialButtonCircle2ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 110, 40));
+        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 60, 110, 40));
 
         FILTER.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL", "BSIT", "BSHM", "BEED", "BSBA", "BSTM", "BSCRIM", " " }));
         FILTER.addItemListener(new java.awt.event.ItemListener() {
@@ -168,7 +168,11 @@ DefaultTableModel model;
                 return canEdit [columnIndex];
             }
         });
-        studentdet.setColorBackgoundHead(new java.awt.Color(0, 204, 0));
+        studentdet.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
+        studentdet.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
+        studentdet.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
+        studentdet.setColorForegroundHead(new java.awt.Color(0, 204, 0));
+        studentdet.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         studentdet.setGridColor(new java.awt.Color(255, 255, 255));
         studentdet.setGrosorBordeFilas(0);
         jScrollPane1.setViewportView(studentdet);
@@ -182,7 +186,7 @@ DefaultTableModel model;
         jLabel2.setText("STUDENT TABLE");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 440, 70));
 
-        BACK.setBackground(new java.awt.Color(153, 0, 0));
+        BACK.setBackground(new java.awt.Color(0, 153, 0));
         BACK.setText("BACK");
         BACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +205,7 @@ DefaultTableModel model;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
+            .addGap(0, 640, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
