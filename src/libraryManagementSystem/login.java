@@ -10,11 +10,16 @@ import java.sql.SQLException;
 import CONFIG.DBCONNECTOR;
 import CONFIG.Session;
 import CONFIG.passwordHash;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import org.mindrot.jbcrypt.BCrypt;
 import java.sql.DriverManager;
+import javax.swing.AbstractAction;
+import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 
 public class login extends javax.swing.JFrame {
 
@@ -25,6 +30,13 @@ private Connection con;
   static String status; 
     public login() {
         initComponents();
+        login.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),"login" );
+        login.getActionMap().put("login", new AbstractAction(){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            loginActionPerformed(e);
+        }
+    });
     }
      public boolean validatelogin(){
     String name = UN.getText();
@@ -90,12 +102,13 @@ private Connection con;
         UN = new app.bolivia.swing.JCTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        LOGIN = new necesario.RSMaterialButtonCircle();
+        login = new necesario.RSMaterialButtonCircle();
         jLabel13 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         PD = new rojerusan.RSPasswordTextPlaceHolder();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        cb = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -160,15 +173,15 @@ private Connection con;
         jLabel6.setText("PASSWORD:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 90, 30));
 
-        LOGIN.setBackground(new java.awt.Color(255, 255, 255));
-        LOGIN.setForeground(new java.awt.Color(0, 0, 0));
-        LOGIN.setText("LOGIN");
-        LOGIN.addActionListener(new java.awt.event.ActionListener() {
+        login.setBackground(new java.awt.Color(255, 255, 255));
+        login.setForeground(new java.awt.Color(0, 0, 0));
+        login.setText("LOGIN");
+        login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LOGINActionPerformed(evt);
+                loginActionPerformed(evt);
             }
         });
-        jPanel2.add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 140, 40));
+        jPanel2.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 140, 40));
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("_______________________________");
@@ -193,10 +206,18 @@ private Connection con;
                 jLabel7MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(204, 0, 0));
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 180, 2));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 180, 2));
+
+        cb.setText("Show Password");
+        cb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cb, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 120, 20));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 375, 495));
 
@@ -212,7 +233,7 @@ private Connection con;
         // TODO add your handling code here:
     }//GEN-LAST:event_PDActionPerformed
 
-    private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
               if(loginAcc(UN.getText(),PD.getText())){
                   if(!status.equals("Active")){
                       JOptionPane.showMessageDialog(null, "In-active account");
@@ -226,7 +247,7 @@ private Connection con;
                          JOptionPane.showMessageDialog(null, "invalid username or password ");
                           
         }
-    }//GEN-LAST:event_LOGINActionPerformed
+    }//GEN-LAST:event_loginActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
             signup UP= new signup();
@@ -237,6 +258,16 @@ private Connection con;
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
     }//GEN-LAST:event_formWindowActivated
+
+    private void cbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbActionPerformed
+        // TODO add your handling code here:
+        if(cb.isSelected()){
+            PD.setEchoChar((char)0);
+            
+        }else{
+            PD.setEchoChar('*');
+        }
+    }//GEN-LAST:event_cbActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,9 +305,9 @@ private Connection con;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private necesario.RSMaterialButtonCircle LOGIN;
     private rojerusan.RSPasswordTextPlaceHolder PD;
     private app.bolivia.swing.JCTextField UN;
+    private javax.swing.JCheckBox cb;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
@@ -289,5 +320,6 @@ private Connection con;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private necesario.RSMaterialButtonCircle login;
     // End of variables declaration//GEN-END:variables
 }
