@@ -69,7 +69,7 @@ if(contact.equals("")){
  String name = UN.getText();
    boolean isexist = false;
  try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
            PreparedStatement pst = con.prepareStatement("select * from user where username = ?");
            pst.setString(1, name);
            ResultSet rs = pst.executeQuery();

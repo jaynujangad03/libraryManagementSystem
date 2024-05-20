@@ -64,7 +64,7 @@ gslip();
   private void getbookdet(){
  int bookid= Integer.parseInt(isbn.getText());
  try{
-  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+  connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
   PreparedStatement pst = connection.prepareStatement("SELECT * FROM book_details where ISBN =?");
   pst.setInt(1, bookid);
   ResultSet rs = pst.executeQuery();
@@ -88,7 +88,7 @@ gslip();
  private void getstudentdet(){
  int sid= Integer.parseInt(studentid.getText());
  try{
-  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+  connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
   PreparedStatement pst = connection.prepareStatement("SELECT * FROM student_details where ID =?");
   pst.setInt(1, sid);
   ResultSet rs = pst.executeQuery();
@@ -174,7 +174,7 @@ gslip();
   java.sql.Date sduedate = new java.sql.Date(l2);
   
      try {
-     connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+     connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
      String sql = "insert into issued_bookdet(ISBN,ID,ISSUED,DUE,STATUS) values(?,?,?,?,?)";
      
      PreparedStatement pst = connection.prepareStatement(sql);
@@ -204,7 +204,7 @@ gslip();
  public void updatebookquant(){
  int bookid= Integer.parseInt(isbn.getText());
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           String sql = "update book_details set QUANTITY = QUANTITY - 1 where ISBN =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           pst.setInt(1, bookid);
@@ -231,7 +231,7 @@ gslip();
   int sid= Integer.parseInt(studentid.getText());
   
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           String sql = "select * from issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           

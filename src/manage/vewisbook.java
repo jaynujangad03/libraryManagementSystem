@@ -39,7 +39,7 @@ DefaultTableModel model;
     }
   public void viewdetails(){
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery("select * from issued_bookdet where STATUS ='"+"PENDING"+"'");
              
