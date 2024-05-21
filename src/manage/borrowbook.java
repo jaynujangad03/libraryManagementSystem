@@ -135,9 +135,7 @@ gslip();
  slip.setText(slip.getText()+"\nSIGNATURE:\n\n");
  slip.setText(slip.getText()+"\n____________\t_____________\n");
  slip.setText(slip.getText()+"LIBRARIAN\t\tBORROWER\n");
- 
- 
- 
+
  
  }
     //print

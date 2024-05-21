@@ -27,6 +27,10 @@ public class changepass extends javax.swing.JInternalFrame {
     public changepass() {
         initComponents();
         
+          this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        BasicInternalFrameUI bi = (BasicInternalFrameUI) this.getUI();
+        bi.setNorthPane(null);
+        
     }
 
     /**
