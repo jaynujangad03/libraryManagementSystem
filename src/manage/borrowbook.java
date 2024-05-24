@@ -327,154 +327,153 @@ String studenti = studentid.getText();
         slip = new javax.swing.JTextArea();
         print = new rojerusan.RSMaterialButtonCircle();
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("ID:");
-        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, -1, 32));
+        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 32));
 
         jLabel3.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("NAME:");
-        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 130, 60, 32));
+        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 60, 32));
 
         jLabel4.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("LASTNAME:");
-        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 90, 32));
+        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 90, 32));
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("COURSE:");
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, -1, 32));
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 32));
 
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("YEAR:");
-        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 32));
+        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, 32));
 
         jLabel7.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("CONTACT:");
-        jPanel10.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 80, 32));
+        jPanel10.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 80, 32));
 
-        jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/graduation (1).png"))); // NOI18N
         jLabel2.setText("STUDENT DETAILS");
-        jPanel10.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 220, 40));
+        jPanel10.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 260, 40));
 
         id.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         id.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 170, 30));
+        jPanel10.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 170, 30));
 
         nme.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         nme.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(nme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 170, 30));
+        jPanel10.add(nme, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, 30));
 
         lnme.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         lnme.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(lnme, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 170, 30));
+        jPanel10.add(lnme, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, 170, 30));
 
         course.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         course.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(course, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 170, 30));
+        jPanel10.add(course, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 170, 30));
 
         yr.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         yr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 170, 30));
+        jPanel10.add(yr, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 170, 30));
 
         contact.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         contact.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 170, 30));
+        jPanel10.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 170, 30));
 
         studenterror.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
-        studenterror.setForeground(new java.awt.Color(51, 255, 204));
+        studenterror.setForeground(new java.awt.Color(255, 0, 0));
         studenterror.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel10.add(studenterror, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 250, 30));
+        jPanel10.add(studenterror, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 250, 30));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 540));
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 102));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel8.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/book (9).png"))); // NOI18N
         jLabel8.setText("BOOK DETAILS");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 220, 40));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 220, 40));
 
         jLabel9.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("ISBN:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 40, 30));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 40, 30));
 
         jLabel10.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("BOOK TITTLE:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, 30));
 
         jLabel11.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("GENRE:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, 30));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, -1, 30));
 
         jLabel12.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("EDITION:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, 30));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, 30));
 
         jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel16.setText("QUANTITY:");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 90, 30));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 90, 30));
 
         i_bn.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         i_bn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(i_bn, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 150, 30));
+        jPanel2.add(i_bn, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, 30));
 
         T_TLE.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         T_TLE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(T_TLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 150, 30));
+        jPanel2.add(T_TLE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 150, 30));
 
         GEN_RE.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         GEN_RE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(GEN_RE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 150, 30));
+        jPanel2.add(GEN_RE, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 150, 30));
 
         ED_D.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         ED_D.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(ED_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 150, 30));
+        jPanel2.add(ED_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 150, 30));
 
         QUANT.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         QUANT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(QUANT, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 150, 30));
+        jPanel2.add(QUANT, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 150, 30));
 
         bookerror.setFont(new java.awt.Font("Yu Gothic UI", 1, 13)); // NOI18N
         bookerror.setForeground(new java.awt.Color(255, 0, 0));
         bookerror.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(bookerror, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 250, 30));
+        jPanel2.add(bookerror, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 250, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 280, 540));
 
-        isbn.setBackground(new java.awt.Color(0, 204, 153));
         isbn.setBorder(null);
         isbn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         isbn.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -497,26 +496,26 @@ String studenti = studentid.getText();
         });
         jPanel1.add(isbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 204, 0));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/book (8).png"))); // NOI18N
         jLabel13.setText("ISSUE BOOK");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 250, 80));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 220, 50));
 
         jLabel14.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setForeground(new java.awt.Color(0, 204, 0));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("ISBN:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 40, 30));
 
         jLabel15.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setForeground(new java.awt.Color(0, 204, 0));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("STUDENT ID:");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 100, 40));
 
         jLabel17.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setForeground(new java.awt.Color(0, 204, 0));
         jLabel17.setText("ISSUE DATE");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 90, 30));
 
@@ -525,7 +524,7 @@ String studenti = studentid.getText();
         jPanel1.add(DUEDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 220, 30));
 
         jLabel18.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setForeground(new java.awt.Color(0, 204, 0));
         jLabel18.setText("DUE DATE");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 80, 30));
 
@@ -533,7 +532,6 @@ String studenti = studentid.getText();
         ISSUEDATE.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jPanel1.add(ISSUEDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 220, 30));
 
-        studentid.setBackground(new java.awt.Color(0, 204, 153));
         studentid.setBorder(null);
         studentid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         studentid.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -560,11 +558,9 @@ String studenti = studentid.getText();
         });
         jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 230, 40));
 
-        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setText("_______________________________");
         jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 210, 40));
 
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
         jLabel20.setText("_______________________________");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 210, 40));
 

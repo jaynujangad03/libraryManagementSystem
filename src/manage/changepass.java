@@ -91,7 +91,7 @@ public class changepass extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/graduation.png"))); // NOI18N
@@ -124,7 +124,7 @@ public class changepass extends javax.swing.JInternalFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("  Status  ");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 80, 32));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 80, 32));
 
         user_name.setBackground(new java.awt.Color(0, 204, 0));
         user_name.setBorder(null);
@@ -180,7 +180,7 @@ public class changepass extends javax.swing.JInternalFrame {
 
         line3.setForeground(new java.awt.Color(25, 20, 20));
         line3.setText("_______________________________");
-        jPanel2.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 200, 30));
+        jPanel2.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 200, 30));
 
         sta_tus.setBackground(new java.awt.Color(0, 204, 0));
         sta_tus.setBorder(null);
@@ -198,11 +198,11 @@ public class changepass extends javax.swing.JInternalFrame {
                 sta_tusKeyTyped(evt);
             }
         });
-        jPanel2.add(sta_tus, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, -1, -1));
+        jPanel2.add(sta_tus, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, -1, -1));
 
         line5.setForeground(new java.awt.Color(25, 20, 20));
         line5.setText("_______________________________");
-        jPanel2.add(line5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 200, 30));
+        jPanel2.add(line5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -294,7 +294,7 @@ public class changepass extends javax.swing.JInternalFrame {
                 rSMaterialButtonCircle2ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 380, 110, 40));
+        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 230, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 

@@ -364,27 +364,28 @@ String contact= ECT.getText();
         browse = new rojerusan.RSMaterialButtonCircle();
         EY = new javax.swing.JComboBox<>();
         EC = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         search = new app.bolivia.swing.JCTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         studentdet = new rojeru_san.complementos.RSTableMetro();
         rSMaterialButtonCircle2 = new necesario.RSMaterialButtonCircle();
+        jLabel9 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("ID:");
-        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 30, 30));
+        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 30, 30));
 
-        EN.setBackground(new java.awt.Color(0, 204, 0));
+        EN.setBackground(new java.awt.Color(153, 153, 255));
         EN.setBorder(null);
         EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -395,21 +396,21 @@ String contact= ECT.getText();
                 ENKeyReleased(evt);
             }
         });
-        jPanel10.add(EN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 180, -1));
+        jPanel10.add(EN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 180, -1));
 
         jLabel3.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("NAME:");
-        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 32));
+        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 32));
 
         jLabel4.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("LASTNAME:");
-        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 160, 120, 32));
+        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, 32));
 
-        ELN.setBackground(new java.awt.Color(0, 204, 0));
+        ELN.setBackground(new java.awt.Color(153, 153, 255));
         ELN.setBorder(null);
         ELN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ELN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -420,48 +421,51 @@ String contact= ECT.getText();
                 ELNKeyReleased(evt);
             }
         });
-        jPanel10.add(ELN, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 180, -1));
+        jPanel10.add(ELN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 180, -1));
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("COURSE:");
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 230, 90, 32));
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 90, 32));
 
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("YEAR:");
-        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 60, 32));
+        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 60, 32));
 
-        DELETE.setBackground(new java.awt.Color(0, 153, 0));
+        DELETE.setBackground(new java.awt.Color(255, 255, 255));
+        DELETE.setForeground(new java.awt.Color(0, 0, 0));
         DELETE.setText("DELETE");
         DELETE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DELETEActionPerformed(evt);
             }
         });
-        jPanel10.add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 459, 100, 50));
+        jPanel10.add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 480, 100, 50));
 
-        ADD.setBackground(new java.awt.Color(0, 153, 0));
+        ADD.setBackground(new java.awt.Color(255, 255, 255));
+        ADD.setForeground(new java.awt.Color(0, 0, 0));
         ADD.setText("ADD");
         ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ADDActionPerformed(evt);
             }
         });
-        jPanel10.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 459, 100, 50));
+        jPanel10.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 100, 50));
 
-        UPDATE.setBackground(new java.awt.Color(0, 153, 0));
+        UPDATE.setBackground(new java.awt.Color(255, 255, 255));
+        UPDATE.setForeground(new java.awt.Color(0, 0, 0));
         UPDATE.setText("UPDATE");
         UPDATE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UPDATEActionPerformed(evt);
             }
         });
-        jPanel10.add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 459, 100, 50));
+        jPanel10.add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 100, 50));
 
-        ECT.setBackground(new java.awt.Color(0, 204, 0));
+        ECT.setBackground(new java.awt.Color(153, 153, 255));
         ECT.setBorder(null);
         ECT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ECT.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -472,13 +476,13 @@ String contact= ECT.getText();
                 ECTKeyPressed(evt);
             }
         });
-        jPanel10.add(ECT, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 180, -1));
+        jPanel10.add(ECT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 180, -1));
 
         jLabel7.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("CONTACT:");
-        jPanel10.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 100, 32));
+        jPanel10.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 100, 32));
 
         jLabel20.setForeground(new java.awt.Color(25, 20, 20));
         jLabel20.setText("_______________________________");
@@ -487,30 +491,30 @@ String contact= ECT.getText();
         line.setForeground(new java.awt.Color(25, 20, 20));
         line.setText("__________________________");
         line.setToolTipText("");
-        jPanel10.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 200, 30));
+        jPanel10.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 160, 30));
 
         line1.setForeground(new java.awt.Color(25, 20, 20));
         line1.setText("__________________________");
         line1.setToolTipText("");
-        jPanel10.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 190, 30));
+        jPanel10.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 160, 30));
 
         line2.setForeground(new java.awt.Color(25, 20, 20));
         line2.setText("__________________________");
         line2.setToolTipText("");
-        jPanel10.add(line2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 200, 30));
+        jPanel10.add(line2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 160, 30));
 
         line3.setForeground(new java.awt.Color(25, 20, 20));
         line3.setText("__________________________");
         line3.setToolTipText("");
-        jPanel10.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 200, 30));
+        jPanel10.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 160, 30));
 
-        ID.setBackground(new java.awt.Color(0, 204, 0));
+        ID.setBackground(new java.awt.Color(153, 153, 255));
         ID.setBorder(null);
         ID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ID.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
         ID.setOpaque(false);
         ID.setPlaceholder("enter id");
-        jPanel10.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 180, 32));
+        jPanel10.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 180, 32));
 
         image.setBackground(new java.awt.Color(255, 255, 255));
         image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -519,32 +523,32 @@ String contact= ECT.getText();
                 imageKeyPressed(evt);
             }
         });
-        jPanel10.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 90, 100));
+        jPanel10.add(image, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 120, 100));
 
-        browse.setBackground(new java.awt.Color(0, 153, 0));
+        browse.setBackground(new java.awt.Color(255, 255, 255));
+        browse.setForeground(new java.awt.Color(0, 0, 0));
         browse.setText("BROWSE");
         browse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 browseActionPerformed(evt);
             }
         });
-        jPanel10.add(browse, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 110, 50));
+        jPanel10.add(browse, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, 110, 50));
 
         EY.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1ST", "2ND", "3RD", "4TH" }));
-        jPanel10.add(EY, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 150, 30));
+        jPanel10.add(EY, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 150, 30));
 
         EC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BSBA", "BSIT", "BSHM", "BEED", "BED", "BSCRIM", "BSTM", " " }));
-        jPanel10.add(EC, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 150, 30));
+        jPanel10.add(EC, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 150, 30));
 
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 540));
+        jLabel8.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Student Details");
+        jPanel10.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 180, 40));
 
-        jLabel2.setBackground(new java.awt.Color(0, 204, 0));
-        jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/graduation.png"))); // NOI18N
-        jLabel2.setText("ADD STUDENT");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 350, 60));
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 540));
 
         search.setBackground(new java.awt.Color(204, 204, 204));
         search.setBorder(null);
@@ -552,12 +556,17 @@ String contact= ECT.getText();
         search.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         search.setPhColor(new java.awt.Color(0, 204, 0));
         search.setPlaceholder("SEARCH");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchKeyReleased(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 340, 20));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 210, 20));
 
         studentdet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -581,7 +590,7 @@ String contact= ECT.getText();
         });
         jScrollPane2.setViewportView(studentdet);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 560, 410));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 520, 390));
 
         rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 204, 0));
         rSMaterialButtonCircle2.setText("PRINT");
@@ -590,54 +599,19 @@ String contact= ECT.getText();
                 rSMaterialButtonCircle2ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 80, 110, 40));
+        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 40, 110, 40));
+
+        jLabel9.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Student Table");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 180, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
-        if(validation()== true){
-      add();
-        }
-    }//GEN-LAST:event_ADDActionPerformed
-
-    private void UPDATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEActionPerformed
-       if(validation()== true){
-     update();
-        }
-      
-    }//GEN-LAST:event_UPDATEActionPerformed
-
-    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
-     int rowIndex = studentdet.getSelectedRow();
-       if(rowIndex < 0){
-           JOptionPane.showMessageDialog(null, "Please select a data first");
-       }else{
-            TableModel model = studentdet.getModel();
-            Object value = model.getValueAt(rowIndex, 0);
-            String ID = value.toString();
-             int a=JOptionPane.showConfirmDialog(null,"Are you sure?");  
-                    if(a==JOptionPane.YES_OPTION){  
-                            DBCONNECTOR dbc = new DBCONNECTOR();
-                            dbc.deleteData(Integer.parseInt(ID));
-                            displayData();
-                            reset();
-                            JOptionPane.showMessageDialog(this, "DELETED SUCCESSFULL");
-                    }    
-       }
-    }//GEN-LAST:event_DELETEActionPerformed
-
-    private void ECTKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ECTKeyPressed
-      char c =evt.getKeyChar();
-        if(Character.isLetter(c)){
-        EC.setEditable(false);
-        JOptionPane.showMessageDialog(this, "Please enter number only");
-        }else{
-        EC.setEditable(true);
-        } 
-    }//GEN-LAST:event_ECTKeyPressed
 
     private void searchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyReleased
       String seachst = search.getText();
@@ -661,52 +635,95 @@ String contact= ECT.getText();
         }
     }//GEN-LAST:event_rSMaterialButtonCircle2ActionPerformed
 
+    private void browseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        int returnValue = fileChooser.showOpenDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            try {
+                sfile = fileChooser.getSelectedFile();
+                picpath = "src/images/" + sfile.getName();
+                path  = sfile.getAbsolutePath();
+
+                if(FileChecker(path) == 1){
+                    JOptionPane.showMessageDialog(null, "File Already Exist, Rename or Choose another!");
+                    picpath = "";
+                    path="";
+                }else{
+                    image.setIcon(ResizeImage(path, null, image));
+                    System.out.println(""+picpath);
+                    browse.setVisible(true);
+                    browse.setText("REMOVE");
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, "FILE "+ex);
+            }
+        }
+    }//GEN-LAST:event_browseActionPerformed
+
     private void imageKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imageKeyPressed
         img();
     }//GEN-LAST:event_imageKeyPressed
 
+    private void ECTKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ECTKeyPressed
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)){
+            EC.setEditable(false);
+            JOptionPane.showMessageDialog(this, "Please enter number only");
+        }else{
+            EC.setEditable(true);
+        }
+    }//GEN-LAST:event_ECTKeyPressed
+
+    private void UPDATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UPDATEActionPerformed
+        if(validation()== true){
+            update();
+        }
+
+    }//GEN-LAST:event_UPDATEActionPerformed
+
+    private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
+        if(validation()== true){
+            add();
+        }
+    }//GEN-LAST:event_ADDActionPerformed
+
+    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
+        int rowIndex = studentdet.getSelectedRow();
+        if(rowIndex < 0){
+            JOptionPane.showMessageDialog(null, "Please select a data first");
+        }else{
+            TableModel model = studentdet.getModel();
+            Object value = model.getValueAt(rowIndex, 0);
+            String ID = value.toString();
+            int a=JOptionPane.showConfirmDialog(null,"Are you sure?");
+            if(a==JOptionPane.YES_OPTION){
+                DBCONNECTOR dbc = new DBCONNECTOR();
+                dbc.deleteData(Integer.parseInt(ID));
+                displayData();
+                reset();
+                JOptionPane.showMessageDialog(this, "DELETED SUCCESSFULL");
+            }
+        }
+    }//GEN-LAST:event_DELETEActionPerformed
+
     private void ELNKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ELNKeyReleased
-       int pos =  ELN.getCaretPosition();
-         ELN.setText( ELN.getText().toUpperCase());
-         ELN.setCaretPosition(pos);
-        
+        int pos =  ELN.getCaretPosition();
+        ELN.setText( ELN.getText().toUpperCase());
+        ELN.setCaretPosition(pos);
+
     }//GEN-LAST:event_ELNKeyReleased
 
     private void ENKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ENKeyReleased
         int pos =  EN.getCaretPosition();
-         EN.setText( EN.getText().toUpperCase());
-         EN.setCaretPosition(pos);
-        
+        EN.setText( EN.getText().toUpperCase());
+        EN.setCaretPosition(pos);
+
     }//GEN-LAST:event_ENKeyReleased
 
-    private void browseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browseActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-                int returnValue = fileChooser.showOpenDialog(null);
-                
-                
-                
-                if (returnValue == JFileChooser.APPROVE_OPTION) {
-                    try {
-                        sfile = fileChooser.getSelectedFile();
-                        picpath = "src/images/" + sfile.getName();
-                        path  = sfile.getAbsolutePath();
-                        
-                        
-                        if(FileChecker(path) == 1){
-                          JOptionPane.showMessageDialog(null, "File Already Exist, Rename or Choose another!");
-                            picpath = "";
-                            path="";
-                        }else{
-                            image.setIcon(ResizeImage(path, null, image));
-                            System.out.println(""+picpath);
-                            browse.setVisible(true);
-                            browse.setText("REMOVE");
-                        }
-                    } catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, "FILE "+ex);
-                    }
-                }
-    }//GEN-LAST:event_browseActionPerformed
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -722,13 +739,14 @@ String contact= ECT.getText();
     private rojerusan.RSMaterialButtonCircle browse;
     private javax.swing.JLabel image;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JScrollPane jScrollPane2;

@@ -92,7 +92,8 @@ public class DASHBOARD extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DH.setBackground(new java.awt.Color(153, 153, 255));
+        DH.setBackground(new java.awt.Color(51, 51, 51));
+        DH.setForeground(new java.awt.Color(51, 51, 51));
         DH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DHMouseClicked(evt);
@@ -268,7 +269,8 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(VL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 190, -1));
 
-        LO.setBackground(new java.awt.Color(102, 102, 225));
+        LO.setBackground(new java.awt.Color(51, 51, 51));
+        LO.setForeground(new java.awt.Color(51, 51, 51));
         LO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LOMouseClicked(evt);
@@ -302,9 +304,9 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel2.setText("FEATURED");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 190, 30));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 53, 190, 540));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 540));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
 
         exit.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -353,7 +355,7 @@ public class DASHBOARD extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(acc_name, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 299, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(179, 179, 179)
                 .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,7 +409,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_DHMouseEntered
 
     private void DHMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DHMouseExited
-       this.DH.setBackground(Color.decode("#9999FF"));
+       this.DH.setBackground(Color.decode("#333333"));
     }//GEN-LAST:event_DHMouseExited
 
     private void ABMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABMouseEntered
@@ -471,7 +473,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_LOMouseEntered
 
     private void LOMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOMouseExited
-       this.LO.setBackground(Color.decode("#6666E1"));
+       this.LO.setBackground(Color.decode("#333333"));
     }//GEN-LAST:event_LOMouseExited
 
     private void DHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DHMouseClicked

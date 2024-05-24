@@ -89,11 +89,12 @@ DefaultTableModel model;
         jScrollPane1 = new javax.swing.JScrollPane();
         DETAILS = new rojeru_san.complementos.RSTableMetro();
         rSMaterialButtonCircle1 = new necesario.RSMaterialButtonCircle();
+        jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -119,7 +120,7 @@ DefaultTableModel model;
         DETAILS.setGrosorBordeFilas(0);
         jScrollPane1.setViewportView(DETAILS);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 850, 370));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 830, 300));
 
         rSMaterialButtonCircle1.setBackground(new java.awt.Color(0, 204, 51));
         rSMaterialButtonCircle1.setText("PRINT");
@@ -128,15 +129,18 @@ DefaultTableModel model;
                 rSMaterialButtonCircle1ActionPerformed(evt);
             }
         });
-        jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 10, 110, 40));
+        jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 110, 40));
+
+        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 870, 90));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 870, 450));
 
-        jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/yellow-card (3).png"))); // NOI18N
         jLabel16.setText("VIOLATION LIST");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 320, 80));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 270, 60));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 
@@ -162,6 +166,7 @@ DefaultTableModel model;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private necesario.RSMaterialButtonCircle rSMaterialButtonCircle1;
     // End of variables declaration//GEN-END:variables

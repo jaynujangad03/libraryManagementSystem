@@ -143,7 +143,6 @@ DefaultTableModel model;
         jPanel10 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DETAILS = new rojeru_san.complementos.RSTableMetro();
-        rSMaterialButtonCircle1 = new necesario.RSMaterialButtonCircle();
         FILTER = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         ddate = new com.toedter.calendar.JDateChooser();
@@ -152,10 +151,11 @@ DefaultTableModel model;
         jLabel2 = new javax.swing.JLabel();
         VIEWALL = new necesario.RSMaterialButtonCircle();
         SEARCH = new necesario.RSMaterialButtonCircle();
+        rSMaterialButtonCircle1 = new necesario.RSMaterialButtonCircle();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -189,16 +189,7 @@ DefaultTableModel model;
         DETAILS.setGrosorBordeFilas(0);
         jScrollPane1.setViewportView(DETAILS);
 
-        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 850, 300));
-
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(0, 153, 0));
-        rSMaterialButtonCircle1.setText("PRINT");
-        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle1ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 130, 40));
+        jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 830, 300));
 
         FILTER.setBackground(new java.awt.Color(0, 204, 0));
         FILTER.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL", "RETURNED", "PENDING", " " }));
@@ -209,47 +200,59 @@ DefaultTableModel model;
         });
         jPanel10.add(FILTER, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 160, 30));
 
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 870, 360));
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 870, 360));
 
-        jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/return (3).png"))); // NOI18N
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/book (8).png"))); // NOI18N
         jLabel16.setText("VIEW RECORDS");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 320, 80));
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 270, 60));
 
         ddate.setDateFormatString("MM/ dd/ yy");
-        jPanel1.add(ddate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 200, 30));
+        jPanel1.add(ddate, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 490, 200, 30));
 
         isdate.setDateFormatString("MM/ dd/ yy");
-        jPanel1.add(isdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 200, 30));
+        jPanel1.add(isdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 490, 200, 30));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("DUE DATE:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 150, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 150, 30));
 
         jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ISSUE DATE:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 150, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 150, 30));
 
-        VIEWALL.setBackground(new java.awt.Color(0, 153, 0));
+        VIEWALL.setBackground(new java.awt.Color(255, 255, 255));
+        VIEWALL.setForeground(new java.awt.Color(0, 0, 0));
         VIEWALL.setText("VIEW ALL");
         VIEWALL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VIEWALLActionPerformed(evt);
             }
         });
-        jPanel1.add(VIEWALL, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 100, 150, 50));
+        jPanel1.add(VIEWALL, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 130, 40));
 
-        SEARCH.setBackground(new java.awt.Color(0, 153, 0));
+        SEARCH.setBackground(new java.awt.Color(255, 255, 255));
+        SEARCH.setForeground(new java.awt.Color(0, 0, 0));
         SEARCH.setText("SEARCH");
         SEARCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SEARCHActionPerformed(evt);
             }
         });
-        jPanel1.add(SEARCH, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 50, 150, 50));
+        jPanel1.add(SEARCH, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 480, 130, 40));
+
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(255, 255, 255));
+        rSMaterialButtonCircle1.setForeground(new java.awt.Color(0, 0, 0));
+        rSMaterialButtonCircle1.setText("PRINT");
+        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonCircle1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, 110, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 

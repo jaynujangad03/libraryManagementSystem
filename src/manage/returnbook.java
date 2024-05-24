@@ -162,7 +162,7 @@ String studenti = STUDid.getText();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -226,7 +226,7 @@ String studenti = STUDid.getText();
         jLabel13.setText("ISSUE BOOK DETAILS");
         jPanel10.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 300, 80));
 
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 540));
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 540));
 
         ISBN.setBorder(null);
         ISBN.setHorizontalAlignment(javax.swing.JTextField.CENTER);

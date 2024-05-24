@@ -128,30 +128,31 @@ DefaultTableModel model;
         BOOKDET = new rojeru_san.complementos.RSTableMetro();
         search = new app.bolivia.swing.JCTextField();
         rSMaterialButtonCircle2 = new necesario.RSMaterialButtonCircle();
+        jLabel7 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        EN.setBackground(new java.awt.Color(0, 204, 0));
+        EN.setBackground(new java.awt.Color(153, 153, 255));
         EN.setBorder(null);
         EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
         EN.setOpaque(false);
         EN.setPlaceholder("enter isbn");
-        jPanel10.add(EN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 270, -1));
+        jPanel10.add(EN, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 270, -1));
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("ISBN:");
-        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 50, 32));
+        jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 32));
 
-        EBT.setBackground(new java.awt.Color(0, 204, 0));
+        EBT.setBackground(new java.awt.Color(153, 153, 255));
         EBT.setBorder(null);
         EBT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EBT.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -162,21 +163,21 @@ DefaultTableModel model;
                 EBTKeyReleased(evt);
             }
         });
-        jPanel10.add(EBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 270, -1));
+        jPanel10.add(EBT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 270, -1));
 
         jLabel3.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("BOOK TITTLE:");
-        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, 32));
+        jPanel10.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, 32));
 
         jLabel4.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("GENRE:");
-        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 160, 80, 32));
+        jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 80, 32));
 
-        ED.setBackground(new java.awt.Color(0, 204, 0));
+        ED.setBackground(new java.awt.Color(153, 153, 255));
         ED.setBorder(null);
         ED.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ED.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -187,21 +188,21 @@ DefaultTableModel model;
                 EDKeyTyped(evt);
             }
         });
-        jPanel10.add(ED, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 270, -1));
+        jPanel10.add(ED, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 270, -1));
 
         jLabel5.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("EDITION:");
-        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 90, 32));
+        jPanel10.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 90, 32));
 
         jLabel6.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("QUANTITY:");
-        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 310, 120, 32));
+        jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 120, 32));
 
-        QUANT.setBackground(new java.awt.Color(0, 204, 0));
+        QUANT.setBackground(new java.awt.Color(153, 153, 255));
         QUANT.setBorder(null);
         QUANT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         QUANT.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -212,62 +213,65 @@ DefaultTableModel model;
                 QUANTKeyPressed(evt);
             }
         });
-        jPanel10.add(QUANT, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 270, -1));
+        jPanel10.add(QUANT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 270, -1));
 
-        DELETE.setBackground(new java.awt.Color(0, 153, 0));
+        DELETE.setBackground(new java.awt.Color(255, 255, 255));
+        DELETE.setForeground(new java.awt.Color(0, 0, 0));
         DELETE.setText("DELETE");
         DELETE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DELETEActionPerformed(evt);
             }
         });
-        jPanel10.add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 400, 110, 59));
+        jPanel10.add(DELETE, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 420, 110, 59));
 
-        ADD.setBackground(new java.awt.Color(0, 153, 0));
+        ADD.setBackground(new java.awt.Color(255, 255, 255));
+        ADD.setForeground(new java.awt.Color(0, 0, 0));
         ADD.setText("ADD");
         ADD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ADDActionPerformed(evt);
             }
         });
-        jPanel10.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 100, 59));
+        jPanel10.add(ADD, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 100, 59));
 
-        UPDATE.setBackground(new java.awt.Color(0, 153, 0));
+        UPDATE.setBackground(new java.awt.Color(255, 255, 255));
+        UPDATE.setForeground(new java.awt.Color(0, 0, 0));
         UPDATE.setText("UPDATE");
         UPDATE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 UPDATEActionPerformed(evt);
             }
         });
-        jPanel10.add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, 100, 59));
+        jPanel10.add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 420, 100, 59));
 
         line.setForeground(new java.awt.Color(25, 20, 20));
         line.setText("_____________________________________________");
-        jPanel10.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 290, 30));
+        jPanel10.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 270, 30));
 
         line1.setForeground(new java.awt.Color(25, 20, 20));
         line1.setText("_____________________________________________");
-        jPanel10.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, 30));
+        jPanel10.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 270, 30));
 
         line3.setForeground(new java.awt.Color(25, 20, 20));
         line3.setText("_____________________________________________");
-        jPanel10.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 290, 30));
+        jPanel10.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 280, 30));
 
         line4.setForeground(new java.awt.Color(25, 20, 20));
         line4.setText("_____________________________________________");
-        jPanel10.add(line4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 290, 30));
+        jPanel10.add(line4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 270, 30));
 
         EG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ANIME", "ROMANCE", "FICTION", "HORROR", "MYSTERY", "NOVEL", "FANTASY", "MATHIMATICS", "SCIENCE", "BIOLOGY", "TECHNOLOGY", " " }));
-        jPanel10.add(EG, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 270, 30));
-
-        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 540));
+        jPanel10.add(EG, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 270, 30));
 
         jLabel2.setBackground(new java.awt.Color(0, 204, 0));
-        jLabel2.setFont(new java.awt.Font("Sylfaen", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ADD BOOK");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 280, 70));
+        jLabel2.setText("Book Details");
+        jPanel10.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 190, 40));
+
+        jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 540));
 
         BOOKDET.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -294,7 +298,7 @@ DefaultTableModel model;
         });
         jScrollPane1.setViewportView(BOOKDET);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 520, 400));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 520, 400));
 
         search.setBackground(new java.awt.Color(204, 204, 204));
         search.setBorder(null);
@@ -307,7 +311,7 @@ DefaultTableModel model;
                 searchKeyReleased(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 340, 20));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 210, 20));
 
         rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 204, 0));
         rSMaterialButtonCircle2.setText("PRINT");
@@ -316,7 +320,14 @@ DefaultTableModel model;
                 rSMaterialButtonCircle2ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, 110, 40));
+        jPanel1.add(rSMaterialButtonCircle2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 50, 110, 40));
+
+        jLabel7.setBackground(new java.awt.Color(0, 204, 0));
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Book Table");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 
@@ -449,6 +460,7 @@ DefaultTableModel model;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JScrollPane jScrollPane1;
