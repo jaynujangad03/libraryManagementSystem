@@ -40,7 +40,7 @@ DefaultTableModel model;
     }
   public void viewdetails(){
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery("select * from issued_bookdet");
              
@@ -86,7 +86,7 @@ DefaultTableModel model;
   java.sql.Date sddate = new java.sql.Date(l2);
   
       try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
            String sql = "select * from issued_bookdet where ISSUED BETWEEN ? and ?";
            PreparedStatement pst = con.prepareStatement(sql);
            pst.setDate(1, sidate);
@@ -198,7 +198,7 @@ DefaultTableModel model;
                 FILTERItemStateChanged(evt);
             }
         });
-        jPanel10.add(FILTER, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 160, 30));
+        jPanel10.add(FILTER, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 160, 30));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 870, 360));
 
@@ -232,7 +232,7 @@ DefaultTableModel model;
                 VIEWALLActionPerformed(evt);
             }
         });
-        jPanel1.add(VIEWALL, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 40, 130, 40));
+        jPanel1.add(VIEWALL, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 120, 40));
 
         SEARCH.setBackground(new java.awt.Color(255, 255, 255));
         SEARCH.setForeground(new java.awt.Color(0, 0, 0));
@@ -252,7 +252,7 @@ DefaultTableModel model;
                 rSMaterialButtonCircle1ActionPerformed(evt);
             }
         });
-        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, 110, 40));
+        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 40, 120, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 

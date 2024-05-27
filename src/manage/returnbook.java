@@ -36,7 +36,7 @@ private Connection connection;
  int sid= Integer.parseInt(STUDid.getText());
  
     try {
-         connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
          String sql = "SELECT * FROM issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
         PreparedStatement pst = connection.prepareStatement(sql);
         
@@ -71,7 +71,7 @@ boolean isreturnbook = false;
  int bookid = Integer.parseInt(ISBN.getText());
  int sid= Integer.parseInt(STUDid.getText());
     try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
          String sql = "update issued_bookdet set STATUS = ? where ID = ? and ISBN = ? and STATUS = ?";
          PreparedStatement pst = connection.prepareStatement(sql);
          pst.setString(1, "RETURNED");
@@ -94,7 +94,7 @@ boolean isreturnbook = false;
 public void updatebookquant(){
  int bookid= Integer.parseInt(ISBN.getText());
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
           String sql = "update book_details set QUANTITY = QUANTITY + 1 where ISBN =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           pst.setInt(1, bookid);
