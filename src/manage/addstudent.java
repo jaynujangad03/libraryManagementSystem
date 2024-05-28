@@ -238,7 +238,7 @@ String contact= ECT.getText();
      public void add(){
      int result=0;
          try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
             String sql = "INSERT INTO student_details ( NAME, LASTNAME, COURSE, YEAR, CONTACT, IMAGE)values (?,?,?,?,?,?)"; 
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, EN.getText());
@@ -269,7 +269,7 @@ String contact= ECT.getText();
      public void update(){
          int result=0;
          try {
-         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+         con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
          int row = studentdet.getSelectedRow();
          String value = (studentdet.getModel().getValueAt(row, 0).toString());
          String sql = "UPDATE student_details SET NAME=?, LASTNAME=?, COURSE=?, YEAR=?, CONTACT=?, IMAGE=? where ID="+value;
@@ -301,7 +301,7 @@ String contact= ECT.getText();
     ImageIcon format;
      String tc = studentdet.getModel().getValueAt(row, 0).toString();
              try{
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              String sql = "select * from student_details where ID="+tc+"";
              PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -376,7 +376,7 @@ String contact= ECT.getText();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel10.setBackground(new java.awt.Color(158, 165, 241));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
@@ -385,7 +385,7 @@ String contact= ECT.getText();
         jLabel1.setText("ID:");
         jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 30, 30));
 
-        EN.setBackground(new java.awt.Color(153, 153, 255));
+        EN.setBackground(new java.awt.Color(158, 165, 241));
         EN.setBorder(null);
         EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -410,7 +410,7 @@ String contact= ECT.getText();
         jLabel4.setText("LASTNAME:");
         jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 120, 32));
 
-        ELN.setBackground(new java.awt.Color(153, 153, 255));
+        ELN.setBackground(new java.awt.Color(158, 165, 241));
         ELN.setBorder(null);
         ELN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ELN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -465,7 +465,7 @@ String contact= ECT.getText();
         });
         jPanel10.add(UPDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, 100, 50));
 
-        ECT.setBackground(new java.awt.Color(153, 153, 255));
+        ECT.setBackground(new java.awt.Color(158, 165, 241));
         ECT.setBorder(null);
         ECT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ECT.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -508,7 +508,7 @@ String contact= ECT.getText();
         line3.setToolTipText("");
         jPanel10.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 160, 30));
 
-        ID.setBackground(new java.awt.Color(153, 153, 255));
+        ID.setBackground(new java.awt.Color(158, 165, 241));
         ID.setBorder(null);
         ID.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ID.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -579,7 +579,7 @@ String contact= ECT.getText();
         studentdet.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
         studentdet.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
         studentdet.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
-        studentdet.setColorForegroundHead(new java.awt.Color(0, 204, 0));
+        studentdet.setColorForegroundHead(new java.awt.Color(102, 102, 225));
         studentdet.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         studentdet.setFont(new java.awt.Font("Yu Gothic UI", 1, 10)); // NOI18N
         studentdet.setGrosorBordeFilas(0);
@@ -592,7 +592,7 @@ String contact= ECT.getText();
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 520, 390));
 
-        rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 204, 0));
+        rSMaterialButtonCircle2.setBackground(new java.awt.Color(158, 165, 241));
         rSMaterialButtonCircle2.setText("PRINT");
         rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -603,7 +603,7 @@ String contact= ECT.getText();
 
         jLabel9.setBackground(new java.awt.Color(0, 204, 0));
         jLabel9.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel9.setForeground(new java.awt.Color(102, 102, 225));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("Student Table");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 180, 40));

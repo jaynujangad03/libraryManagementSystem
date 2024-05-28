@@ -93,7 +93,7 @@ public class changepass extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(158, 165, 241));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/graduation.png"))); // NOI18N
@@ -128,7 +128,7 @@ public class changepass extends javax.swing.JInternalFrame {
         jLabel10.setText("  Status  ");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 80, 32));
 
-        user_name.setBackground(new java.awt.Color(0, 204, 0));
+        user_name.setBackground(new java.awt.Color(158, 165, 241));
         user_name.setBorder(null);
         user_name.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         user_name.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -145,7 +145,7 @@ public class changepass extends javax.swing.JInternalFrame {
         line.setText("_______________________________");
         jPanel2.add(line, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 210, 30));
 
-        e_mail.setBackground(new java.awt.Color(0, 204, 0));
+        e_mail.setBackground(new java.awt.Color(158, 165, 241));
         e_mail.setBorder(null);
         e_mail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         e_mail.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -162,7 +162,7 @@ public class changepass extends javax.swing.JInternalFrame {
         line1.setText("_______________________________");
         jPanel2.add(line1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 200, 30));
 
-        con_tact.setBackground(new java.awt.Color(0, 204, 0));
+        con_tact.setBackground(new java.awt.Color(158, 165, 241));
         con_tact.setBorder(null);
         con_tact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         con_tact.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -184,7 +184,7 @@ public class changepass extends javax.swing.JInternalFrame {
         line3.setText("_______________________________");
         jPanel2.add(line3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 200, 30));
 
-        sta_tus.setBackground(new java.awt.Color(0, 204, 0));
+        sta_tus.setBackground(new java.awt.Color(158, 165, 241));
         sta_tus.setBorder(null);
         sta_tus.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         sta_tus.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -214,12 +214,12 @@ public class changepass extends javax.swing.JInternalFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 560));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel4.setForeground(new java.awt.Color(102, 102, 225));
         jLabel4.setText("Change Password Account");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 10, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel9.setForeground(new java.awt.Color(102, 102, 225));
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setText("Old Password  ");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, 130, 32));
@@ -236,7 +236,7 @@ public class changepass extends javax.swing.JInternalFrame {
         jPanel1.add(line2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 170, 200, 30));
 
         jLabel11.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel11.setForeground(new java.awt.Color(102, 102, 225));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("New Password");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, 32));
@@ -263,7 +263,7 @@ public class changepass extends javax.swing.JInternalFrame {
         jPanel1.add(line4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 240, 200, 30));
 
         jLabel12.setFont(new java.awt.Font("Sylfaen", 1, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel12.setForeground(new java.awt.Color(102, 102, 225));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Confirm Password ");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, 180, 32));
@@ -289,7 +289,7 @@ public class changepass extends javax.swing.JInternalFrame {
         line6.setText("_______________________________");
         jPanel1.add(line6, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 200, 30));
 
-        rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 204, 0));
+        rSMaterialButtonCircle2.setBackground(new java.awt.Color(158, 165, 241));
         rSMaterialButtonCircle2.setText("Change");
         rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

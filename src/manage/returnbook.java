@@ -36,7 +36,7 @@ private Connection connection;
  int sid= Integer.parseInt(STUDid.getText());
  
     try {
-         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+         connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
          String sql = "SELECT * FROM issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
         PreparedStatement pst = connection.prepareStatement(sql);
         
@@ -71,7 +71,7 @@ boolean isreturnbook = false;
  int bookid = Integer.parseInt(ISBN.getText());
  int sid= Integer.parseInt(STUDid.getText());
     try {
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
          String sql = "update issued_bookdet set STATUS = ? where ID = ? and ISBN = ? and STATUS = ?";
          PreparedStatement pst = connection.prepareStatement(sql);
          pst.setString(1, "RETURNED");
@@ -94,7 +94,7 @@ boolean isreturnbook = false;
 public void updatebookquant(){
  int bookid= Integer.parseInt(ISBN.getText());
      try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+          connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
           String sql = "update book_details set QUANTITY = QUANTITY + 1 where ISBN =?";
           PreparedStatement pst = connection.prepareStatement(sql);
           pst.setInt(1, bookid);
@@ -162,7 +162,7 @@ String studenti = STUDid.getText();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel10.setBackground(new java.awt.Color(158, 165, 241));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -242,14 +242,14 @@ String studenti = STUDid.getText();
 
         jLabel14.setBackground(new java.awt.Color(0, 190, 82));
         jLabel14.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel14.setForeground(new java.awt.Color(102, 102, 225));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("ISBN:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 90, 30));
 
         jLabel15.setBackground(new java.awt.Color(0, 190, 82));
         jLabel15.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel15.setForeground(new java.awt.Color(102, 102, 225));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("STUDENT ID:");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 110, 40));
@@ -271,7 +271,7 @@ String studenti = STUDid.getText();
         });
         jPanel1.add(STUDid, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 220, -1, -1));
 
-        FINDET.setBackground(new java.awt.Color(0, 204, 0));
+        FINDET.setBackground(new java.awt.Color(158, 165, 241));
         FINDET.setText("FIND DETAILS");
         FINDET.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,7 +288,7 @@ String studenti = STUDid.getText();
         jLabel20.setText("_______________________________");
         jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 210, 40));
 
-        RETURNBOOK.setBackground(new java.awt.Color(0, 204, 0));
+        RETURNBOOK.setBackground(new java.awt.Color(158, 165, 241));
         RETURNBOOK.setText("RETURN BOOK");
         RETURNBOOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,7 +299,7 @@ String studenti = STUDid.getText();
 
         jLabel16.setBackground(new java.awt.Color(0, 190, 82));
         jLabel16.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel16.setForeground(new java.awt.Color(102, 102, 225));
         jLabel16.setText("RETURN BOOK");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 190, 80));
 

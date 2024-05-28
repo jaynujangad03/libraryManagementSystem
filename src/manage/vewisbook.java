@@ -39,7 +39,7 @@ DefaultTableModel model;
     }
   public void viewdetails(){
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery("select * from issued_bookdet where STATUS ='"+"PENDING"+"'");
              
@@ -91,7 +91,7 @@ DefaultTableModel model;
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(158, 165, 241));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -108,7 +108,7 @@ DefaultTableModel model;
         DETAILS.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
         DETAILS.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
         DETAILS.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
-        DETAILS.setColorForegroundHead(new java.awt.Color(0, 204, 0));
+        DETAILS.setColorForegroundHead(new java.awt.Color(102, 102, 225));
         DETAILS.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         DETAILS.setFuenteFilas(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteFilasSelect(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
@@ -119,7 +119,7 @@ DefaultTableModel model;
 
         jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 830, 300));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(158, 165, 241));
         jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 870, 90));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 870, 450));

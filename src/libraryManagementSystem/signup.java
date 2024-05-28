@@ -117,7 +117,7 @@ if(contact.equals("")){
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 164, 28));
+        jPanel1.setBackground(new java.awt.Color(158, 165, 241));
         jPanel1.setPreferredSize(new java.awt.Dimension(450, 495));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -154,24 +154,24 @@ if(contact.equals("")){
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 40, 30));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 190, 82));
+        jLabel3.setForeground(new java.awt.Color(102, 102, 225));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("SIGN UP");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 240, 40));
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 190, 82));
+        jLabel4.setForeground(new java.awt.Color(102, 102, 225));
         jLabel4.setText("Please create your account");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 190, 82));
+        jLabel5.setForeground(new java.awt.Color(102, 102, 225));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("CONTACT:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 90, 30));
 
         jLabel6.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 190, 82));
+        jLabel6.setForeground(new java.awt.Color(102, 102, 225));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("PASSWORD:");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 90, 30));
@@ -196,13 +196,13 @@ if(contact.equals("")){
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 40, 30));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 190, 82));
+        jLabel11.setForeground(new java.awt.Color(102, 102, 225));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("EMAIL:");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 90, 30));
 
         jLabel12.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 190, 82));
+        jLabel12.setForeground(new java.awt.Color(102, 102, 225));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("USERNAME:");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 90, 30));
@@ -251,7 +251,7 @@ if(contact.equals("")){
         jLabel16.setText("_______________________________");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 200, 30));
 
-        SIGN_UP.setBackground(new java.awt.Color(0, 164, 28));
+        SIGN_UP.setBackground(new java.awt.Color(158, 165, 241));
         SIGN_UP.setText("SIGN UP");
         SIGN_UP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

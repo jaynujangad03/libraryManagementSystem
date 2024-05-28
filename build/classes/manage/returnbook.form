@@ -40,7 +40,7 @@
         <Container class="javax.swing.JPanel" name="jPanel10">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="99" type="rgb"/>
+              <Color blue="f1" green="a5" red="9e" type="rgb"/>
             </Property>
           </Properties>
           <Constraints>
@@ -270,7 +270,7 @@
               <Font name="Sylfaen" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="ISBN:"/>
@@ -290,7 +290,7 @@
               <Font name="Sylfaen" size="14" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="STUDENT ID:"/>
@@ -326,7 +326,7 @@
         <Component class="necesario.RSMaterialButtonCircle" name="FINDET">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="f1" green="a5" red="9e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="FIND DETAILS"/>
           </Properties>
@@ -368,7 +368,7 @@
         <Component class="necesario.RSMaterialButtonCircle" name="RETURNBOOK">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="f1" green="a5" red="9e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="RETURN BOOK"/>
           </Properties>
@@ -390,7 +390,7 @@
               <Font name="Sylfaen" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="RETURN BOOK"/>
           </Properties>

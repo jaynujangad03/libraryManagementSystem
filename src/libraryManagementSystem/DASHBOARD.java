@@ -89,10 +89,10 @@ public class DASHBOARD extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 225));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        DH.setBackground(new java.awt.Color(0, 204, 0));
+        DH.setBackground(new java.awt.Color(102, 102, 225));
         DH.setForeground(new java.awt.Color(51, 51, 51));
         DH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -115,7 +115,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(DH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 190, 40));
 
-        AB.setBackground(new java.awt.Color(0, 204, 0));
+        AB.setBackground(new java.awt.Color(102, 102, 225));
         AB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ABMouseClicked(evt);
@@ -137,7 +137,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(AB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 190, -1));
 
-        AS.setBackground(new java.awt.Color(0, 204, 0));
+        AS.setBackground(new java.awt.Color(102, 102, 225));
         AS.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ASMouseClicked(evt);
@@ -159,7 +159,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(AS, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 190, 40));
 
-        IB.setBackground(new java.awt.Color(0, 204, 0));
+        IB.setBackground(new java.awt.Color(102, 102, 225));
         IB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 IBMouseClicked(evt);
@@ -181,7 +181,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(IB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 190, 40));
 
-        RB.setBackground(new java.awt.Color(0, 204, 0));
+        RB.setBackground(new java.awt.Color(102, 102, 225));
         RB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 RBMouseClicked(evt);
@@ -203,7 +203,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(RB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 190, -1));
 
-        VR.setBackground(new java.awt.Color(0, 204, 0));
+        VR.setBackground(new java.awt.Color(102, 102, 225));
         VR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 VRMouseClicked(evt);
@@ -225,7 +225,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(VR, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 190, -1));
 
-        VIB.setBackground(new java.awt.Color(0, 204, 0));
+        VIB.setBackground(new java.awt.Color(102, 102, 225));
         VIB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 VIBMouseClicked(evt);
@@ -247,7 +247,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(VIB, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 190, -1));
 
-        VL.setBackground(new java.awt.Color(0, 204, 0));
+        VL.setBackground(new java.awt.Color(102, 102, 225));
         VL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 VLMouseClicked(evt);
@@ -269,7 +269,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         jPanel1.add(VL, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 190, -1));
 
-        LO.setBackground(new java.awt.Color(0, 204, 0));
+        LO.setBackground(new java.awt.Color(102, 102, 225));
         LO.setForeground(new java.awt.Color(51, 51, 51));
         LO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -306,7 +306,7 @@ public class DASHBOARD extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 540));
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 0));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 225));
 
         exit.setFont(new java.awt.Font("Yu Gothic Medium", 1, 14)); // NOI18N
         exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -335,7 +335,7 @@ public class DASHBOARD extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("LIBRARY MANAGEMENT SYSTEM");
 
-        acc_name.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 12)); // NOI18N
+        acc_name.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         acc_name.setForeground(new java.awt.Color(255, 255, 255));
         acc_name.setText("ADMIN");
 
@@ -354,8 +354,8 @@ public class DASHBOARD extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(acc_name, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 308, Short.MAX_VALUE)
+                .addComponent(acc_name, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
                 .addComponent(jLabel12)
                 .addGap(179, 179, 179)
                 .addComponent(minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -409,7 +409,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_DHMouseEntered
 
     private void DHMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DHMouseExited
-       this.DH.setBackground(Color.decode("#00CC00"));
+       this.DH.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_DHMouseExited
 
     private void ABMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABMouseEntered
@@ -417,7 +417,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_ABMouseEntered
 
     private void ABMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ABMouseExited
-         this.AB.setBackground(Color.decode("#00CC00"));
+         this.AB.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_ABMouseExited
 
     private void ASMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ASMouseEntered
@@ -429,11 +429,11 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_IBMouseEntered
 
     private void IBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IBMouseExited
-      this.IB.setBackground(Color.decode("#00CC00"));
+      this.IB.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_IBMouseExited
 
     private void ASMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ASMouseExited
-       this.AS.setBackground(Color.decode("#00CC00"));
+       this.AS.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_ASMouseExited
 
     private void RBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RBMouseEntered
@@ -441,7 +441,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_RBMouseEntered
 
     private void RBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RBMouseExited
-        this.RB.setBackground(Color.decode("#00CC00"));
+        this.RB.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_RBMouseExited
 
     private void VRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VRMouseEntered
@@ -449,7 +449,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_VRMouseEntered
 
     private void VRMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VRMouseExited
-        this.VR.setBackground(Color.decode("#00CC00"));
+        this.VR.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_VRMouseExited
 
     private void VIBMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VIBMouseEntered
@@ -457,7 +457,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_VIBMouseEntered
 
     private void VIBMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VIBMouseExited
-      this.VIB.setBackground(Color.decode("#00CC00"));
+      this.VIB.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_VIBMouseExited
 
     private void VLMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VLMouseEntered
@@ -465,7 +465,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_VLMouseEntered
 
     private void VLMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VLMouseExited
-     this.VL.setBackground(Color.decode("#00CC00"));
+     this.VL.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_VLMouseExited
 
     private void LOMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOMouseEntered
@@ -551,7 +551,8 @@ public class DASHBOARD extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         Session sess = Session.getInstance();
-        acc_name.setText(""+sess.getUN());
+       
+        acc_name.setText("Hello, "+sess.getUN());
        
     }//GEN-LAST:event_formWindowActivated
 

@@ -135,10 +135,10 @@ DefaultTableModel model;
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel10.setBackground(new java.awt.Color(158, 165, 241));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        EN.setBackground(new java.awt.Color(153, 153, 255));
+        EN.setBackground(new java.awt.Color(158, 165, 241));
         EN.setBorder(null);
         EN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EN.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -152,7 +152,7 @@ DefaultTableModel model;
         jLabel1.setText("ISBN:");
         jPanel10.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 50, 32));
 
-        EBT.setBackground(new java.awt.Color(153, 153, 255));
+        EBT.setBackground(new java.awt.Color(158, 165, 241));
         EBT.setBorder(null);
         EBT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         EBT.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -177,7 +177,7 @@ DefaultTableModel model;
         jLabel4.setText("GENRE:");
         jPanel10.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 80, 32));
 
-        ED.setBackground(new java.awt.Color(153, 153, 255));
+        ED.setBackground(new java.awt.Color(158, 165, 241));
         ED.setBorder(null);
         ED.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ED.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -202,7 +202,7 @@ DefaultTableModel model;
         jLabel6.setText("QUANTITY:");
         jPanel10.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 120, 32));
 
-        QUANT.setBackground(new java.awt.Color(153, 153, 255));
+        QUANT.setBackground(new java.awt.Color(158, 165, 241));
         QUANT.setBorder(null);
         QUANT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         QUANT.setFont(new java.awt.Font("Sylfaen", 1, 15)); // NOI18N
@@ -287,7 +287,7 @@ DefaultTableModel model;
         BOOKDET.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
         BOOKDET.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
         BOOKDET.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
-        BOOKDET.setColorForegroundHead(new java.awt.Color(0, 153, 0));
+        BOOKDET.setColorForegroundHead(new java.awt.Color(102, 102, 225));
         BOOKDET.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         BOOKDET.setFuenteHead(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         BOOKDET.setGrosorBordeFilas(0);
@@ -304,7 +304,7 @@ DefaultTableModel model;
         search.setBorder(null);
         search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         search.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
-        search.setPhColor(new java.awt.Color(0, 204, 0));
+        search.setPhColor(new java.awt.Color(158, 165, 241));
         search.setPlaceholder("SEARCH");
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -313,7 +313,7 @@ DefaultTableModel model;
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 210, 20));
 
-        rSMaterialButtonCircle2.setBackground(new java.awt.Color(0, 204, 0));
+        rSMaterialButtonCircle2.setBackground(new java.awt.Color(158, 165, 241));
         rSMaterialButtonCircle2.setText("PRINT");
         rSMaterialButtonCircle2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -324,7 +324,7 @@ DefaultTableModel model;
 
         jLabel7.setBackground(new java.awt.Color(0, 204, 0));
         jLabel7.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel7.setForeground(new java.awt.Color(102, 102, 225));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Book Table");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 140, 40));

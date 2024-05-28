@@ -17,7 +17,7 @@ public class DBCONNECTOR {
     
     public DBCONNECTOR (){
         try{
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
             }catch(SQLException e){
                 System.err.println("Cannot connect to database: " + e.getMessage());
             }

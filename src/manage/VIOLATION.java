@@ -40,7 +40,7 @@ DefaultTableModel model;
    long l = System.currentTimeMillis();
   Date todayDate = new Date(l);
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              PreparedStatement pst = con.prepareStatement("select * from issued_bookdet where DUE < ? and STATUS = ?");
              pst.setDate(1, todayDate);
              pst.setString(2, "PENDING");
@@ -94,7 +94,7 @@ DefaultTableModel model;
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(158, 165, 241));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -111,7 +111,7 @@ DefaultTableModel model;
         DETAILS.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
         DETAILS.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
         DETAILS.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
-        DETAILS.setColorForegroundHead(new java.awt.Color(0, 204, 0));
+        DETAILS.setColorForegroundHead(new java.awt.Color(102, 102, 225));
         DETAILS.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         DETAILS.setFuenteFilas(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteFilasSelect(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
@@ -122,7 +122,7 @@ DefaultTableModel model;
 
         jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 830, 300));
 
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(0, 204, 51));
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(158, 165, 241));
         rSMaterialButtonCircle1.setText("PRINT");
         rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,7 +131,7 @@ DefaultTableModel model;
         });
         jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 110, 40));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(158, 165, 241));
         jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 870, 90));
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 870, 450));

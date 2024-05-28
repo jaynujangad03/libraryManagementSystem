@@ -40,7 +40,7 @@ DefaultTableModel model;
     }
   public void viewdetails(){
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery("select * from issued_bookdet");
              
@@ -86,7 +86,7 @@ DefaultTableModel model;
   java.sql.Date sddate = new java.sql.Date(l2);
   
       try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
            String sql = "select * from issued_bookdet where ISSUED BETWEEN ? and ?";
            PreparedStatement pst = con.prepareStatement(sql);
            pst.setDate(1, sidate);
@@ -155,7 +155,7 @@ DefaultTableModel model;
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(158, 165, 241));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -180,7 +180,7 @@ DefaultTableModel model;
         DETAILS.setColorBackgoundHead(new java.awt.Color(255, 255, 255));
         DETAILS.setColorFilasForeground1(new java.awt.Color(0, 0, 0));
         DETAILS.setColorFilasForeground2(new java.awt.Color(0, 0, 0));
-        DETAILS.setColorForegroundHead(new java.awt.Color(0, 204, 0));
+        DETAILS.setColorForegroundHead(new java.awt.Color(102, 102, 225));
         DETAILS.setColorSelBackgound(new java.awt.Color(0, 0, 0));
         DETAILS.setFuenteFilas(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
         DETAILS.setFuenteFilasSelect(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
@@ -191,7 +191,7 @@ DefaultTableModel model;
 
         jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 830, 300));
 
-        FILTER.setBackground(new java.awt.Color(0, 204, 0));
+        FILTER.setBackground(new java.awt.Color(102, 102, 225));
         FILTER.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ALL", "RETURNED", "PENDING", " " }));
         FILTER.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {

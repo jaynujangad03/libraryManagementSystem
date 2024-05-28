@@ -32,7 +32,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="cc" red="0" type="rgb"/>
+          <Color blue="e1" green="66" red="66" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -48,7 +48,7 @@
         <Container class="javax.swing.JPanel" name="DH">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -91,7 +91,7 @@
         <Container class="javax.swing.JPanel" name="AB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -131,7 +131,7 @@
         <Container class="javax.swing.JPanel" name="AS">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -171,7 +171,7 @@
         <Container class="javax.swing.JPanel" name="IB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -211,7 +211,7 @@
         <Container class="javax.swing.JPanel" name="RB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -251,7 +251,7 @@
         <Container class="javax.swing.JPanel" name="VR">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -291,7 +291,7 @@
         <Container class="javax.swing.JPanel" name="VIB">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -331,7 +331,7 @@
         <Container class="javax.swing.JPanel" name="VL">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
           <Events>
@@ -371,7 +371,7 @@
         <Container class="javax.swing.JPanel" name="LO">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="cc" red="0" type="rgb"/>
+              <Color blue="e1" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -450,7 +450,7 @@
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="cc" red="0" type="rgb"/>
+          <Color blue="e1" green="66" red="66" type="rgb"/>
         </Property>
       </Properties>
       <Constraints>
@@ -466,8 +466,8 @@
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="acc_name" min="-2" pref="51" max="-2" attributes="0"/>
-                  <EmptySpace pref="308" max="32767" attributes="0"/>
+                  <Component id="acc_name" min="-2" pref="142" max="-2" attributes="0"/>
+                  <EmptySpace pref="208" max="32767" attributes="0"/>
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="179" max="-2" attributes="0"/>
                   <Component id="minimize" min="-2" pref="40" max="-2" attributes="0"/>
@@ -547,7 +547,7 @@
         <Component class="javax.swing.JLabel" name="acc_name">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Yu Gothic UI Light" size="12" style="1"/>
+              <Font name="Yu Gothic UI Light" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

@@ -61,216 +61,218 @@ gslip();
      });
      
     }
-  private void getbookdet(){
- int bookid= Integer.parseInt(isbn.getText());
- try{
-  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
-  PreparedStatement pst = connection.prepareStatement("SELECT * FROM book_details where ISBN =?");
-  pst.setInt(1, bookid);
-  ResultSet rs = pst.executeQuery();
-  
-  if(rs.next()){
-  i_bn.setText(rs.getString("ISBN"));
-  T_TLE.setText(rs.getString("TITTLE"));
-  GEN_RE.setText(rs.getString("GENRE"));
-  ED_D.setText(rs.getString("EDITION"));
-  QUANT.setText(rs.getString("QUANTITY"));
-   bookerror.setText("");
-  }else{
-  bookerror.setText("INVALID ISBN");
-  }
- }catch (SQLException ex){
- ex.printStackTrace();
- 
- }
- }
- //get student details
- private void getstudentdet(){
- int sid= Integer.parseInt(studentid.getText());
- try{
-  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
-  PreparedStatement pst = connection.prepareStatement("SELECT * FROM student_details where ID =?");
-  pst.setInt(1, sid);
-  ResultSet rs = pst.executeQuery();
-  
-  if(rs.next()){
-  id.setText(rs.getString("ID"));
-  nme.setText(rs.getString("NAME"));
-  lnme.setText(rs.getString("LASTNAME"));
-  course.setText(rs.getString("COURSE"));
-  yr.setText(rs.getString("YEAR"));
-  contact.setText(rs.getString("CONTACT"));
-  studenterror.setText("");
-  }else{
-  studenterror.setText("INVALID STUDENT ID");
-          }
- }catch (SQLException ex){
- ex.printStackTrace();
- }
- }
- 
- 
- 
- public void gslip(){
+                    private void getbookdet(){
+                   int bookid= Integer.parseInt(isbn.getText());
+                   try{
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+                    PreparedStatement pst = connection.prepareStatement("SELECT * FROM book_details where ISBN =?");
+                    pst.setInt(1, bookid);
+                    ResultSet rs = pst.executeQuery();
 
- slip.setText(slip.getText()+"-----------------------------------------------------\n");
- slip.setText(slip.getText()+"-------------------BORROWERS SLIP--------------------\n");
- slip.setText(slip.getText()+"-----------------------------------------------------\n");
- 
- Date date = new Date();  
+                    if(rs.next()){
+                    i_bn.setText(rs.getString("ISBN"));
+                    T_TLE.setText(rs.getString("TITTLE"));
+                    GEN_RE.setText(rs.getString("GENRE"));
+                    ED_D.setText(rs.getString("EDITION"));
+                    QUANT.setText(rs.getString("QUANTITY"));
+                     bookerror.setText("");
+                    }else{
+                    bookerror.setText("INVALID ISBN");
+                    }
+                   }catch (SQLException ex){
+                   ex.printStackTrace();
 
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
-        String formattedDate = dateFormat.format(date);
- 
+                   }
+                   }
+                   //get student details
+                   private void getstudentdet(){
+                   int sid= Integer.parseInt(studentid.getText());
+                   try{
+                    connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+                    PreparedStatement pst = connection.prepareStatement("SELECT * FROM student_details where ID =?");
+                    pst.setInt(1, sid);
+                    ResultSet rs = pst.executeQuery();
 
-  slip.setText(slip.getText()+"\nDATE: "+formattedDate+"\n");
- slip.setText(slip.getText()+"\nISBN: "+isbn.getText()+"\n");
- slip.setText(slip.getText()+"\nBOOK NAME: "+ T_TLE.getText()+"\n");
- slip.setText(slip.getText()+"\nSTUDENT ID: "+ studentid.getText()+"\n");
-  slip.setText(slip.getText()+"\nSTUDENT NAME: "+ nme.getText()+"\n");
- slip.setText(slip.getText()+"\nISSUED DATE: "+  ISSUEDATE.getDate()+"\n");
- slip.setText(slip.getText()+"\nDUE DATE: "+  DUEDATE.getDate()+"\n");
- 
- 
- slip.setText(slip.getText()+"\nSIGNATURE:\n\n");
- slip.setText(slip.getText()+"\n____________\t_____________\n");
- slip.setText(slip.getText()+"LIBRARIAN\t\tBORROWER\n");
+                    if(rs.next()){
+                    id.setText(rs.getString("ID"));
+                    nme.setText(rs.getString("NAME"));
+                    lnme.setText(rs.getString("LASTNAME"));
+                    course.setText(rs.getString("COURSE"));
+                    yr.setText(rs.getString("YEAR"));
+                    contact.setText(rs.getString("CONTACT"));
+                    studenterror.setText("");
+                    }else{
+                    studenterror.setText("INVALID STUDENT ID");
+                            }
+                   }catch (SQLException ex){
+                   ex.printStackTrace();
+                   }
+                   }
 
- 
- }
-    //print
- public void print(){
- 
-     try {
-         slip.print();
-     } catch (Exception e) {
-     JOptionPane.showMessageDialog(null, "print failed"+e);
-     }
- 
- 
- 
- 
- }
-         
-         
- //issue book
- public boolean issuebook(){
-     boolean isissued = false;
- int bookid= Integer.parseInt(isbn.getText());
-  int sid= Integer.parseInt(studentid.getText());
-  String bookname= T_TLE.getText();
-  String studentname=nme.getText();
-  String studentlastname=lnme.getText();
- 
-  java.util.Date uissueddate= ISSUEDATE.getDate();
-  java.util.Date uduedate=DUEDATE.getDate();
-  
-  Long l1= uissueddate.getTime();
-  long l2=uduedate.getTime();
-  
-  java.sql.Date sissueddate = new java.sql.Date(l1);
-  java.sql.Date sduedate = new java.sql.Date(l2);
-  
-     try {
-     connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
-     String sql = "insert into issued_bookdet(ISBN,ID,ISSUED,DUE,STATUS) values(?,?,?,?,?)";
-     
-     PreparedStatement pst = connection.prepareStatement(sql);
-  pst.setInt(1, bookid);
-  pst.setInt(2, sid);
-  pst.setDate(3, sissueddate);
-  pst.setDate(4, sduedate);
-  pst.setString(5, "PENDING");
-  
- 
-  int rowCount= pst.executeUpdate();
-  if(rowCount > 0){
-   isissued = true;
-  }else{
-  isissued = false;
-  }
+                    public void gslip(){
 
-     } catch (Exception e) {
-      JOptionPane.showMessageDialog(null, e);
-     
-     }
-  return isissued;
- }
+                    slip.setText(slip.getText()+"\n\t-------------------------------------------------------------------\n\t");
+                    slip.setText(slip.getText()+"\n\t-------------------BORROWERS SLIP--------------------\n\t");
+                    slip.setText(slip.getText()+"\n\t-------------------------------------------------------------------\n\t");
 
- //UPDATE BOOK QUANT
- 
- public void updatebookquant(){
- int bookid= Integer.parseInt(isbn.getText());
-     try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
-          String sql = "update book_details set QUANTITY = QUANTITY - 1 where ISBN =?";
-          PreparedStatement pst = connection.prepareStatement(sql);
-          pst.setInt(1, bookid);
-          
-        int rowcount = pst.executeUpdate();
-          
-          if(rowcount>0){
-          JOptionPane.showMessageDialog(this, "BOOK QUANTITY UPDATED");
-          int initialcount = Integer.parseInt(QUANT.getText());
-          QUANT.setText(Integer.toString(initialcount - 1));
-          }else{
-          JOptionPane.showMessageDialog(this, "BOOK QUANTITY FAILED TO UPDATED");
-          }
-     } catch (Exception e) {
-         e.printStackTrace();
-     }
- }
- 
- //CHECK IF BOOK IS ISSUED OR NOT
- public boolean alreadyissued(){
- 
- boolean alreadyissued = false;
-  int bookid= Integer.parseInt(isbn.getText());
-  int sid= Integer.parseInt(studentid.getText());
-  
-     try {
-          connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
-          String sql = "select * from issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
-          PreparedStatement pst = connection.prepareStatement(sql);
-          
-        pst.setInt(1, bookid);
-        pst.setInt(2, sid);
-        pst.setString(3, "PENDING");
-          
-            ResultSet rs = pst.executeQuery();
-        if(rs.next()){
-        alreadyissued = true;
-        }else{
-        alreadyissued = false;
-        }
-        
-        
-     } catch (Exception e) {
-         e.printStackTrace();
-     }
- return alreadyissued;
- }
-  public boolean validation(){
-String isb = isbn.getText();
-String studenti = studentid.getText();
- if (isb.equals("")){
- JOptionPane.showMessageDialog(this, "PLEASE ENTER ISBN");
- return false;
- }
- if(studenti.equals("")){
- JOptionPane.showMessageDialog(this, "PLEASE ENTER LASTNAME");
- return false;
- }     
- if(ISSUEDATE.getDate() == null){
- JOptionPane.showMessageDialog(this, "PLEASE ENTER ISSUED DATE");
- return false;
- }    
- if(DUEDATE.getDate() == null){
- JOptionPane.showMessageDialog(this, "PLEASE ENTER DUE DATE");
- return false;
- }  
-   return true;  
- }
+                   Date date = new Date();  
+
+                          DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
+                          String formattedDate = dateFormat.format(date);
+
+
+                    slip.setText(slip.getText()+"\n\tDATE: "+formattedDate+"\n\t");
+                    slip.setText(slip.getText()+"\n\tISBN: "+isbn.getText()+"\n\t");
+                    slip.setText(slip.getText()+"\n\tBOOK NAME: "+ T_TLE.getText()+"\n\t");
+                    slip.setText(slip.getText()+"\n\tSTUDENT ID: "+ studentid.getText()+"\n\t");
+                    slip.setText(slip.getText()+"\n\tSTUDENT NAME: "+ nme.getText()+"\n\t");
+                    slip.setText(slip.getText()+"\n\tISSUED DATE: "+  ISSUEDATE.getDate()+"\n\t");
+                    slip.setText(slip.getText()+"\n\tDUE DATE: "+  DUEDATE.getDate()+"\n\t");
+
+
+                    slip.setText(slip.getText()+"\n\tSIGNATURE:\n\n\t\t");
+                    slip.setText(slip.getText()+"\n\t____________\t_____________\n\t");
+                    slip.setText(slip.getText()+"LIBRARIAN\t\tBORROWER\n");
+
+
+                   }
+
+
+
+
+                      //print
+                   public void print(){
+
+                       try {
+                           slip.print();
+                       } catch (Exception e) {
+                       JOptionPane.showMessageDialog(null, "print failed"+e);
+                       }
+
+
+
+
+                   }
+
+
+                   //issue book
+                   public boolean issuebook(){
+                       boolean isissued = false;
+                   int bookid= Integer.parseInt(isbn.getText());
+                    int sid= Integer.parseInt(studentid.getText());
+                    String bookname= T_TLE.getText();
+                    String studentname=nme.getText();
+                    String studentlastname=lnme.getText();
+
+                    java.util.Date uissueddate= ISSUEDATE.getDate();
+                    java.util.Date uduedate=DUEDATE.getDate();
+
+                    Long l1= uissueddate.getTime();
+                    long l2=uduedate.getTime();
+
+                    java.sql.Date sissueddate = new java.sql.Date(l1);
+                    java.sql.Date sduedate = new java.sql.Date(l2);
+
+                       try {
+                       connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+                       String sql = "insert into issued_bookdet(ISBN,ID,ISSUED,DUE,STATUS) values(?,?,?,?,?)";
+
+                       PreparedStatement pst = connection.prepareStatement(sql);
+                    pst.setInt(1, bookid);
+                    pst.setInt(2, sid);
+                    pst.setDate(3, sissueddate);
+                    pst.setDate(4, sduedate);
+                    pst.setString(5, "PENDING");
+
+
+                    int rowCount= pst.executeUpdate();
+                    if(rowCount > 0){
+                     isissued = true;
+                    }else{
+                    isissued = false;
+                    }
+
+                       } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, e);
+
+                       }
+                    return isissued;
+                   }
+
+                   //UPDATE BOOK QUANT
+
+                   public void updatebookquant(){
+                   int bookid= Integer.parseInt(isbn.getText());
+                       try {
+                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+                            String sql = "update book_details set QUANTITY = QUANTITY - 1 where ISBN =?";
+                            PreparedStatement pst = connection.prepareStatement(sql);
+                            pst.setInt(1, bookid);
+
+                          int rowcount = pst.executeUpdate();
+
+                            if(rowcount>0){
+                            JOptionPane.showMessageDialog(this, "BOOK QUANTITY UPDATED");
+                            int initialcount = Integer.parseInt(QUANT.getText());
+                            QUANT.setText(Integer.toString(initialcount - 1));
+                            }else{
+                            JOptionPane.showMessageDialog(this, "BOOK QUANTITY FAILED TO UPDATED");
+                            }
+                       } catch (Exception e) {
+                           e.printStackTrace();
+                       }
+                   }
+
+                   //CHECK IF BOOK IS ISSUED OR NOT
+                   public boolean alreadyissued(){
+
+                   boolean alreadyissued = false;
+                    int bookid= Integer.parseInt(isbn.getText());
+                    int sid= Integer.parseInt(studentid.getText());
+
+                       try {
+                            connection = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+                            String sql = "select * from issued_bookdet where ISBN = ? and ID = ? and STATUS =?";
+                            PreparedStatement pst = connection.prepareStatement(sql);
+
+                          pst.setInt(1, bookid);
+                          pst.setInt(2, sid);
+                          pst.setString(3, "PENDING");
+
+                              ResultSet rs = pst.executeQuery();
+                          if(rs.next()){
+                          alreadyissued = true;
+                          }else{
+                          alreadyissued = false;
+                          }
+
+
+                       } catch (Exception e) {
+                           e.printStackTrace();
+                       }
+                   return alreadyissued;
+                   }
+                    public boolean validation(){
+                  String isb = isbn.getText();
+                  String studenti = studentid.getText();
+                   if (isb.equals("")){
+                   JOptionPane.showMessageDialog(this, "PLEASE ENTER ISBN");
+                   return false;
+                   }
+                   if(studenti.equals("")){
+                   JOptionPane.showMessageDialog(this, "PLEASE ENTER LASTNAME");
+                   return false;
+                   }     
+                   if(ISSUEDATE.getDate() == null){
+                   JOptionPane.showMessageDialog(this, "PLEASE ENTER ISSUED DATE");
+                   return false;
+                   }    
+                   if(DUEDATE.getDate() == null){
+                   JOptionPane.showMessageDialog(this, "PLEASE ENTER DUE DATE");
+                   return false;
+                   }  
+                     return true;  
+                   }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -328,7 +330,7 @@ String studenti = studentid.getText();
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel10.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel10.setBackground(new java.awt.Color(128, 134, 234));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
@@ -405,7 +407,7 @@ String studenti = studentid.getText();
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 540));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel2.setBackground(new java.awt.Color(158, 165, 241));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
@@ -494,26 +496,30 @@ String studenti = studentid.getText();
         });
         jPanel1.add(isbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, -1, -1));
 
+        jLabel13.setBackground(new java.awt.Color(189, 195, 247));
         jLabel13.setFont(new java.awt.Font("Sylfaen", 1, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel13.setForeground(new java.awt.Color(102, 102, 225));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/book (8).png"))); // NOI18N
         jLabel13.setText("ISSUE BOOK");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, 220, 50));
 
+        jLabel14.setBackground(new java.awt.Color(189, 195, 247));
         jLabel14.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel14.setForeground(new java.awt.Color(102, 102, 225));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("ISBN:");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, 40, 30));
 
+        jLabel15.setBackground(new java.awt.Color(189, 195, 247));
         jLabel15.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel15.setForeground(new java.awt.Color(102, 102, 225));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("STUDENT ID:");
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 160, 100, 40));
 
+        jLabel17.setBackground(new java.awt.Color(189, 195, 247));
         jLabel17.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel17.setForeground(new java.awt.Color(102, 102, 225));
         jLabel17.setText("ISSUE DATE");
         jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 90, 30));
 
@@ -521,8 +527,9 @@ String studenti = studentid.getText();
         DUEDATE.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
         jPanel1.add(DUEDATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 220, 30));
 
+        jLabel18.setBackground(new java.awt.Color(189, 195, 247));
         jLabel18.setFont(new java.awt.Font("Sylfaen", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(0, 204, 0));
+        jLabel18.setForeground(new java.awt.Color(102, 102, 225));
         jLabel18.setText("DUE DATE");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 300, 80, 30));
 
@@ -547,7 +554,7 @@ String studenti = studentid.getText();
         });
         jPanel1.add(studentid, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, -1, -1));
 
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(0, 204, 0));
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(158, 165, 241));
         rSMaterialButtonCircle1.setText("Borrow Book");
         rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -568,7 +575,7 @@ String studenti = studentid.getText();
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 450, 300, 90));
 
-        print.setBackground(new java.awt.Color(0, 204, 0));
+        print.setBackground(new java.awt.Color(158, 165, 241));
         print.setText("print");
         print.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -650,7 +657,8 @@ String studenti = studentid.getText();
     }//GEN-LAST:event_studentidKeyPressed
 
     private void printActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printActionPerformed
-      print();
+     
+        print();
     }//GEN-LAST:event_printActionPerformed
 
     private void isbnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isbnActionPerformed
