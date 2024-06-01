@@ -40,7 +40,7 @@ DefaultTableModel model;
     }
   public void viewdetails(){
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
              Statement st = con.createStatement();
              ResultSet rs = st.executeQuery("select * from issued_bookdet");
              
@@ -86,7 +86,7 @@ DefaultTableModel model;
   java.sql.Date sddate = new java.sql.Date(l2);
   
       try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
            String sql = "select * from issued_bookdet where ISSUED BETWEEN ? and ?";
            PreparedStatement pst = con.prepareStatement(sql);
            pst.setDate(1, sidate);

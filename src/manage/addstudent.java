@@ -238,7 +238,7 @@ String contact= ECT.getText();
      public void add(){
      int result=0;
          try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
             String sql = "INSERT INTO student_details ( NAME, LASTNAME, COURSE, YEAR, CONTACT, IMAGE)values (?,?,?,?,?,?)"; 
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, EN.getText());
@@ -269,7 +269,7 @@ String contact= ECT.getText();
      public void update(){
          int result=0;
          try {
-         con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
          int row = studentdet.getSelectedRow();
          String value = (studentdet.getModel().getValueAt(row, 0).toString());
          String sql = "UPDATE student_details SET NAME=?, LASTNAME=?, COURSE=?, YEAR=?, CONTACT=?, IMAGE=? where ID="+value;
@@ -301,7 +301,7 @@ String contact= ECT.getText();
     ImageIcon format;
      String tc = studentdet.getModel().getValueAt(row, 0).toString();
              try{
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
              String sql = "select * from student_details where ID="+tc+"";
              PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();

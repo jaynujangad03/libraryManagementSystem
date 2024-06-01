@@ -170,7 +170,7 @@ DefaultTableModel model;
   Date todaydate = new Date(l);
   
       try {
-           con = DriverManager.getConnection("jdbc:mysql://localhost:3307/library_ba", "root", "");
+           con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
           st = con.prepareStatement("SELECT COUNT(*) FROM student_details");
            rs = st.executeQuery();
           while (rs.next()){
