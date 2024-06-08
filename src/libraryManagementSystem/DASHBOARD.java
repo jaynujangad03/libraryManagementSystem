@@ -473,7 +473,7 @@ public class DASHBOARD extends javax.swing.JFrame {
     }//GEN-LAST:event_LOMouseEntered
 
     private void LOMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LOMouseExited
-       this.LO.setBackground(Color.decode("#00CC00"));
+       this.LO.setBackground(Color.decode("#6666E1"));
     }//GEN-LAST:event_LOMouseExited
 
     private void DHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DHMouseClicked

@@ -36,45 +36,85 @@ DefaultTableModel model;
         bi.setNorthPane(null);
         
     }
- public void viewdetails(){
-   long l = System.currentTimeMillis();
-  Date todayDate = new Date(l);
+ public void viewdetails() {
+        long l = System.currentTimeMillis();
+        Date todayDate = new Date(l);
         try {
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
-             PreparedStatement pst = con.prepareStatement("select * from issued_bookdet where DUE < ? and STATUS = ?");
-             pst.setDate(1, todayDate);
-             pst.setString(2, "PENDING");
-             
-             ResultSet rs = pst.executeQuery();
-             
-             while(rs.next()){
-                 String id = rs.getString("ISSUED_ID");
-             String isbn = rs.getString("ISBN");
-             String studentid = rs.getString("ID");
-             String issuedate = rs.getString("ISSUED");
-             String duedate = rs.getString("DUE");
-             String status = rs.getString("STATUS");
-             
-             Object [] obj = {id,isbn,studentid,issuedate,duedate,status};
-             model = (DefaultTableModel) DETAILS.getModel();
-             model.addRow(obj);
-           
-             }
-             
-             
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_ba", "root", "");
+            // Fetch records that were overdue at some point
+            PreparedStatement pst = con.prepareStatement(
+                "SELECT * FROM issued_bookdet WHERE DUE < ? AND (STATUS = ? OR STATUS = ?)");
+            pst.setDate(1, todayDate);
+            pst.setString(2, "PENDING");
+            pst.setString(3, "RETURNED");
+
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String id = rs.getString("ISSUED_ID");
+                String isbn = rs.getString("ISBN");
+                String studentid = rs.getString("ID");
+                String issuedate = rs.getString("ISSUED");
+                String duedate = rs.getString("DUE");
+                String status = rs.getString("STATUS");
+                
+                // Insert violation into the violation table
+                insertViolation(id, isbn, studentid, issuedate, duedate, status);
+
+                Object[] obj = {id, isbn, studentid, issuedate, duedate, status};
+                model = (DefaultTableModel) DETAILS.getModel();
+                model.addRow(obj);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
-    
     }
-    public void cleartable(){
-    DefaultTableModel model =(DefaultTableModel)DETAILS.getModel();
-    model.setRowCount(0);
-     
-    
-    
+ public void insertViolation(String issuedId, String isbn, String studentId, String issuedDate, String dueDate, String status) {
+        try {
+            // Check if the student exists in the student_details table
+            PreparedStatement checkStudentPst = con.prepareStatement(
+                "SELECT * FROM student_details WHERE ID = ?");
+            checkStudentPst.setString(1, studentId);
+
+            ResultSet studentRs = checkStudentPst.executeQuery();
+            if (!studentRs.next()) {
+                // If the student does not exist, handle the situation accordingly
+                System.err.println("Student ID " + studentId + " does not exist in student_details table.");
+                return;
+            }
+
+            // Check if the violation already exists
+            PreparedStatement checkPst = con.prepareStatement(
+                "SELECT * FROM violation_tbl WHERE ISSUED_ID = ? AND ISBN = ? AND STUDENT_ID = ?");
+            checkPst.setString(1, issuedId);
+            checkPst.setString(2, isbn);
+            checkPst.setString(3, studentId);
+
+            ResultSet rs = checkPst.executeQuery();
+            if (!rs.next()) {
+                // Insert the new violation
+                PreparedStatement insertPst = con.prepareStatement(
+                    "INSERT INTO violation_tbl (ISSUED_ID, ISBN, STUDENT_ID, ISSUED_DATE, DUE_DATE, STATUS) VALUES (?, ?, ?, ?, ?, ?)");
+                insertPst.setString(1, issuedId);
+                insertPst.setString(2, isbn);
+                insertPst.setString(3, studentId);
+                insertPst.setDate(4, Date.valueOf(issuedDate));
+                insertPst.setDate(5, Date.valueOf(dueDate));
+                insertPst.setString(6, status);
+
+                insertPst.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+    public void cleartable() {
+        DefaultTableModel model = (DefaultTableModel) DETAILS.getModel();
+        model.setRowCount(0);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

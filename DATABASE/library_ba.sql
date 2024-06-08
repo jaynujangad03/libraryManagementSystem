@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 10:52 AM
+-- Generation Time: Jun 08, 2024 at 12:15 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,11 +43,11 @@ INSERT INTO `book_details` (`ISBN`, `TITTLE`, `GENRE`, `EDITION`, `QUANTITY`) VA
 (110, 'ONE PIECE', 'ANIME', 1, 10),
 (1002, 'TEST ', 'TEST ', 2, 10),
 (1003, 'HOME', 'HORROR', 1, 9),
-(1004, 'MUTANT', 'ACTION', 1, 10),
+(1004, 'MUTANT', 'ACTION', 1, 11),
 (1005, 'HOME', 'HORROR', 2, 9),
 (1006, 'THE BOOK WISE ', 'PHYCOLOGICAL ', 1, 9),
 (1007, 'THE THREE', 'HORROR', 1, 10),
-(1009, 'WABALO', 'TECHNOLOGY', 1, 7);
+(1009, 'WABALO', 'TECHNOLOGY', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -72,8 +72,11 @@ INSERT INTO `issued_bookdet` (`ISSUED_ID`, `ID`, `ISBN`, `ISSUED`, `DUE`, `STATU
 (16, 41, 1006, '2024-05-12', '2024-05-13', 'PENDING'),
 (17, 42, 1005, '2024-05-12', '2024-05-13', 'PENDING'),
 (18, 41, 1003, '2024-05-12', '2024-05-13', 'PENDING'),
-(19, 42, 1004, '2024-05-13', '2024-05-14', 'PENDING'),
-(20, 42, 1006, '2024-05-14', '2024-05-15', 'RETURNED');
+(19, 42, 1004, '2024-05-13', '2024-05-14', 'RETURNED'),
+(20, 42, 1006, '2024-05-14', '2024-05-15', 'RETURNED'),
+(21, 41, 1009, '2024-06-08', '2024-06-07', 'RETURNED'),
+(22, 41, 1009, '2024-06-08', '2024-06-07', 'PENDING'),
+(23, 42, 1009, '2024-06-08', '2024-06-07', 'RETURNED');
 
 -- --------------------------------------------------------
 
@@ -108,12 +111,12 @@ INSERT INTO `student_details` (`ID`, `NAME`, `LASTNAME`, `COURSE`, `YEAR`, `CONT
 --
 
 CREATE TABLE `user` (
-  `user_id` int(100) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `contact` varchar(100) NOT NULL,
-  `password` varchar(150) NOT NULL,
-  `status` varchar(50) NOT NULL
+  `user_id` int(225) NOT NULL,
+  `username` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `contact` varchar(225) NOT NULL,
+  `password` varchar(225) NOT NULL,
+  `status` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -123,6 +126,37 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`user_id`, `username`, `email`, `contact`, `password`, `status`) VALUES
 (18, 'jaynu', 'jaynujangad03@gmail.com', '09166764802', 'HepwX3KiPVcQdYKZuI/pnhKqUs7XDZ6//rlHp+rxQB0=', 'Active'),
 (22, 'vince', 'vinceomaque@gmail.com', '09166764802', 'HepwX3KiPVcQdYKZuI/pnhKqUs7XDZ6//rlHp+rxQB0=', 'Active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `violation_tbl`
+--
+
+CREATE TABLE `violation_tbl` (
+  `VIOLATION_ID` int(100) NOT NULL,
+  `ISSUED_ID` varchar(100) NOT NULL,
+  `ISBN` varchar(100) NOT NULL,
+  `STUDENT_ID` int(100) NOT NULL,
+  `ISSUED_DATE` date NOT NULL,
+  `DUE_DATE` date NOT NULL,
+  `STATUS` varchar(100) NOT NULL,
+  `VIOLATION_DATE` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `violation_tbl`
+--
+
+INSERT INTO `violation_tbl` (`VIOLATION_ID`, `ISSUED_ID`, `ISBN`, `STUDENT_ID`, `ISSUED_DATE`, `DUE_DATE`, `STATUS`, `VIOLATION_DATE`) VALUES
+(1, '16', '1006', 41, '2024-05-12', '2024-05-13', 'PENDING', '2024-06-08 10:12:10'),
+(2, '17', '1005', 42, '2024-05-12', '2024-05-13', 'PENDING', '2024-06-08 10:12:10'),
+(3, '18', '1003', 41, '2024-05-12', '2024-05-13', 'PENDING', '2024-06-08 10:12:10'),
+(4, '19', '1004', 42, '2024-05-13', '2024-05-14', 'RETURNED', '2024-06-08 10:12:10'),
+(5, '20', '1006', 42, '2024-05-14', '2024-05-15', 'RETURNED', '2024-06-08 10:12:10'),
+(6, '21', '1009', 41, '2024-06-08', '2024-06-07', 'RETURNED', '2024-06-08 10:12:10'),
+(7, '22', '1009', 41, '2024-06-08', '2024-06-07', 'PENDING', '2024-06-08 10:12:10'),
+(8, '23', '1009', 42, '2024-06-08', '2024-06-07', 'PENDING', '2024-06-08 10:12:10');
 
 --
 -- Indexes for dumped tables
@@ -155,6 +189,13 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `violation_tbl`
+--
+ALTER TABLE `violation_tbl`
+  ADD PRIMARY KEY (`VIOLATION_ID`),
+  ADD KEY `STUDENT_ID` (`STUDENT_ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -162,7 +203,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `issued_bookdet`
 --
 ALTER TABLE `issued_bookdet`
-  MODIFY `ISSUED_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ISSUED_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `student_details`
@@ -174,7 +215,13 @@ ALTER TABLE `student_details`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `user_id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `violation_tbl`
+--
+ALTER TABLE `violation_tbl`
+  MODIFY `VIOLATION_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -186,6 +233,12 @@ ALTER TABLE `user`
 ALTER TABLE `issued_bookdet`
   ADD CONSTRAINT `issued_bookdet_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `student_details` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `issued_bookdet_ibfk_2` FOREIGN KEY (`ISBN`) REFERENCES `book_details` (`ISBN`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `violation_tbl`
+--
+ALTER TABLE `violation_tbl`
+  ADD CONSTRAINT `violation_tbl_ibfk_1` FOREIGN KEY (`STUDENT_ID`) REFERENCES `student_details` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
