@@ -128,9 +128,9 @@ DefaultTableModel model;
         jPanel10 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         DETAILS = new rojeru_san.complementos.RSTableMetro();
-        rSMaterialButtonCircle1 = new necesario.RSMaterialButtonCircle();
         jPanel2 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
+        rSMaterialButtonCircle1 = new necesario.RSMaterialButtonCircle();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -162,15 +162,6 @@ DefaultTableModel model;
 
         jPanel10.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 830, 300));
 
-        rSMaterialButtonCircle1.setBackground(new java.awt.Color(158, 165, 241));
-        rSMaterialButtonCircle1.setText("PRINT");
-        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rSMaterialButtonCircle1ActionPerformed(evt);
-            }
-        });
-        jPanel10.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 110, 40));
-
         jPanel2.setBackground(new java.awt.Color(158, 165, 241));
         jPanel10.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 870, 90));
 
@@ -181,6 +172,16 @@ DefaultTableModel model;
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/yellow-card (3).png"))); // NOI18N
         jLabel16.setText("VIOLATION LIST");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, 270, 60));
+
+        rSMaterialButtonCircle1.setBackground(new java.awt.Color(255, 255, 255));
+        rSMaterialButtonCircle1.setForeground(new java.awt.Color(0, 0, 0));
+        rSMaterialButtonCircle1.setText("PRINT");
+        rSMaterialButtonCircle1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rSMaterialButtonCircle1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(rSMaterialButtonCircle1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 110, 40));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 540));
 

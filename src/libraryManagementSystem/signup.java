@@ -151,7 +151,7 @@ if(contact.equals("")){
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 40, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 20, 10));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 225));
@@ -185,15 +185,14 @@ if(contact.equals("")){
         jPanel2.add(PD, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 255, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("X");
+        jLabel8.setText("x");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 40, 30));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, 30, 20));
 
         jLabel11.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(102, 102, 225));

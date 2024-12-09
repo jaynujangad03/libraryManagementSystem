@@ -300,12 +300,16 @@ DefaultTableModel model;
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 520, 400));
 
-        search.setBackground(new java.awt.Color(204, 204, 204));
-        search.setBorder(null);
+        search.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         search.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
-        search.setPhColor(new java.awt.Color(158, 165, 241));
+        search.setPhColor(new java.awt.Color(102, 102, 225));
         search.setPlaceholder("SEARCH");
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
         search.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchKeyReleased(evt);
@@ -442,6 +446,10 @@ DefaultTableModel model;
         EBT.setCaretPosition(pos);
         
     }//GEN-LAST:event_EBTKeyReleased
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

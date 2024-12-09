@@ -550,11 +550,10 @@ String contact= ECT.getText();
 
         jPanel1.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 540));
 
-        search.setBackground(new java.awt.Color(204, 204, 204));
-        search.setBorder(null);
+        search.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         search.setFont(new java.awt.Font("Sylfaen", 1, 12)); // NOI18N
-        search.setPhColor(new java.awt.Color(0, 204, 0));
+        search.setPhColor(new java.awt.Color(102, 102, 225));
         search.setPlaceholder("SEARCH");
         search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -568,6 +567,7 @@ String contact= ECT.getText();
         });
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 210, 20));
 
+        studentdet.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         studentdet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

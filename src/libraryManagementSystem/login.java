@@ -135,13 +135,13 @@ private Connection con;
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("X");
+        jLabel2.setText("x");
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 0, 40, 30));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, -1, 20));
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,9 +156,23 @@ private Connection con;
 
         UN.setBackground(new java.awt.Color(102, 102, 225));
         UN.setBorder(null);
+        UN.setForeground(new java.awt.Color(255, 255, 255));
         UN.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         UN.setOpaque(false);
         UN.setPlaceholder("ENTER USERNAME");
+        UN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UNMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                UNMouseEntered(evt);
+            }
+        });
+        UN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UNActionPerformed(evt);
+            }
+        });
         jPanel2.add(UN, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 14)); // NOI18N
@@ -189,17 +203,23 @@ private Connection con;
 
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("_______________________________");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 220, 30));
 
         PD.setBackground(new java.awt.Color(102, 102, 225));
         PD.setBorder(null);
-        PD.setForeground(new java.awt.Color(0, 0, 0));
+        PD.setForeground(new java.awt.Color(255, 255, 255));
         PD.setFont(new java.awt.Font("Yu Gothic UI", 1, 12)); // NOI18N
         PD.setOpaque(false);
         PD.setPhColor(new java.awt.Color(0, 0, 0));
         PD.setPlaceholder("ENTER PASSWORD");
         jPanel2.add(PD, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Please click here to register");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -211,6 +231,7 @@ private Connection con;
         jPanel3.setBackground(new java.awt.Color(204, 0, 0));
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 390, 180, 2));
 
+        cb.setForeground(new java.awt.Color(255, 255, 255));
         cb.setText("Show Password");
         cb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,6 +289,22 @@ private Connection con;
             PD.setEchoChar('*');
         }
     }//GEN-LAST:event_cbActionPerformed
+
+    private void UNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UNMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UNMouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void UNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UNActionPerformed
+
+    private void UNMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UNMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UNMouseEntered
 
     /**
      * @param args the command line arguments
